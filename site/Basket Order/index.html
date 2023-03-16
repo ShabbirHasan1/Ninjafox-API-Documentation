@@ -1,0 +1,1605 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Alerts/">
+      
+      
+      <link rel="icon" href="../assets/images/ninjafox.svg">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.0">
+    
+    
+      
+        <title>Basket Order - Middleware API Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f79797b0.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#basket-order" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Middleware API Documentation" class="md-header__button md-logo" aria-label="Middleware API Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/ninjafox.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Middleware API Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Basket Order
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Middleware API Documentation" class="md-nav__button md-logo" aria-label="Middleware API Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/ninjafox.svg" alt="logo">
+
+    </a>
+    Middleware API Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication/" class="md-nav__link">
+        Authentication
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Content%201/" class="md-nav__link">
+        Content 1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Content%202/" class="md-nav__link">
+        Content 2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User%20Setting/" class="md-nav__link">
+        User Setting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EKYC%20APIs/" class="md-nav__link">
+        EKYC APIs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orders/" class="md-nav__link">
+        Orders
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../portfolio/" class="md-nav__link">
+        Portfolio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Funds/" class="md-nav__link">
+        Funds
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Alerts/" class="md-nav__link">
+        Alerts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Basket Order
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Basket Order
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-basket" class="md-nav__link">
+    Create Basket
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-basket-order" class="md-nav__link">
+    Get Basket Order
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rename-basket" class="md-nav__link">
+    Rename Basket
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-basket" class="md-nav__link">
+    Delete Basket
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-script-to-basket" class="md-nav__link">
+    Add Script To Basket
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-retrive-scrips" class="md-nav__link">
+    Get Retrive Scrips
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-scrip-in-basket" class="md-nav__link">
+    Delete Scrip in Basket
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-basket" class="md-nav__link">
+    Create Basket
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-basket-order" class="md-nav__link">
+    Get Basket Order
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rename-basket" class="md-nav__link">
+    Rename Basket
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-basket" class="md-nav__link">
+    Delete Basket
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-script-to-basket" class="md-nav__link">
+    Add Script To Basket
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-retrive-scrips" class="md-nav__link">
+    Get Retrive Scrips
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-scrip-in-basket" class="md-nav__link">
+    Delete Scrip in Basket
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="basket-order">Basket Order<a class="headerlink" href="#basket-order" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Apis</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td>basketorder/create </td>
+<td>Create basket order</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>basketorder/get     </td>
+<td>Get basket order</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>basketorder/rename</td>
+<td>Rename basket order</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>basketorder/delete</td>
+<td>delete basket order</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>basketorder/add/scrips</td>
+<td>add basket order scrips</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>basketorder/get/scrips</td>
+<td>Retrieve basket order scrips</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>basketorder/delete/scrips </td>
+<td>Delete basket order scrips</td>
+</tr>
+</tbody>
+</table>
+<h3 id="create-basket">Create Basket<a class="headerlink" href="#create-basket" title="Permanent link">&para;</a></h3>
+<p><strong>Request Structure</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    &quot;userId&quot;: &quot;J111&quot;,
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    &quot;basketName&quot;: &quot;bank&quot;,
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    &quot;createdBy&quot; : &quot;J111&quot;
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>}
+</code></pre></div>
+<p><strong>Input parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>basketName</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>createdBy</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Structure</strong></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    &quot;status&quot;: &quot;Ok&quot;,
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    &quot;message&quot;: &quot;Success&quot;,
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    &quot;result&quot;: [
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        {
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>            &quot;basketId&quot;: 20,
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>            &quot;basketName&quot;: &quot;bank&quot;,
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>            &quot;isExecuted&quot;: &quot;0&quot;,
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>            &quot;createdOn&quot;: &quot;2023-02-23T09:44:39.829+00:00&quot;,
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>            &quot;scripCount&quot;: 0
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        }
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    ]
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>}
+</code></pre></div>
+<strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>basketId</td>
+<td>Int</td>
+<td>Order specific identification generated by nidhi</td>
+</tr>
+<tr>
+<td>basketName</td>
+<td>string</td>
+<td>Last updated status of the order</td>
+</tr>
+<tr>
+<td>isExecuted</td>
+<td>string</td>
+<td>Last updated status of the order</td>
+</tr>
+<tr>
+<td>createdOn</td>
+<td>string</td>
+<td>Last updated status of the order</td>
+</tr>
+<tr>
+<td>scripCount</td>
+<td>Int</td>
+<td>Last updated status of the order</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-basket-order">Get Basket Order<a class="headerlink" href="#get-basket-order" title="Permanent link">&para;</a></h3>
+<p><strong>Request Structure</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    &quot;userId&quot;: &quot;&lt;USER_ID&quot;,
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>}
+</code></pre></div>
+<p><strong>Input parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Structure</strong></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>{
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    &quot;status&quot;: &quot;Ok&quot;,
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    &quot;message&quot;: &quot;Success&quot;,
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    &quot;result&quot;: [
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        {
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>            &quot;basketId&quot;: 20,
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>            &quot;basketName&quot;: &quot;bank&quot;,
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>            &quot;isExecuted&quot;: &quot;0&quot;,
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>            &quot;createdOn&quot;: &quot;2023-02-23T09:44:39.829+00:00&quot;,
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>            &quot;scripCount&quot;: 0
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        }
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    ]
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>}
+</code></pre></div>
+<strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>basketId</td>
+<td>string</td>
+<td>Order specific identification generated by nidhi</td>
+</tr>
+<tr>
+<td>basketName</td>
+<td>string</td>
+<td>Last updated status of the order</td>
+</tr>
+<tr>
+<td>isExecuted</td>
+<td>string</td>
+<td>Last updated status of the order</td>
+</tr>
+<tr>
+<td>createdOn</td>
+<td>string</td>
+<td>Last updated status of the order</td>
+</tr>
+<tr>
+<td>scripCount</td>
+<td>Int</td>
+<td>Last updated status of the order</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rename-basket">Rename Basket<a class="headerlink" href="#rename-basket" title="Permanent link">&para;</a></h3>
+<p><strong>Request Structure</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>{
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    &quot;userId&quot;: &quot;&lt;USER_ID&gt;&quot;,
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    &quot;basketId&quot; :20,
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    &quot;basketName&quot; : &quot;bank1&quot;,
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    &quot;updatedBy&quot; : &quot;J111&quot;
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>}
+</code></pre></div>
+<p><strong>Input parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>basketId</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>basketName</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>updatedBy</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Structure</strong></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>{
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    &quot;status&quot;: &quot;Ok&quot;,
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    &quot;message&quot;: &quot;Success&quot;,
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    &quot;result&quot;: [
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>              {
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>            &quot;basketId&quot;: 20,
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>            &quot;basketName&quot;: &quot;bank1&quot;,
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>            &quot;isExecuted&quot;: &quot;0&quot;,
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>            &quot;createdOn&quot;: &quot;2023-02-23T09:44:39.829+00:00&quot;,
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>            &quot;scripCount&quot;: 0
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>        }
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    ]
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>}
+</code></pre></div>
+<strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>basketId</td>
+<td>string</td>
+<td>Order specific identification generated by nidhi</td>
+</tr>
+<tr>
+<td>basketName</td>
+<td>string</td>
+<td>Last updated status of the order</td>
+</tr>
+<tr>
+<td>isExecuted</td>
+<td>string</td>
+<td>Last updated status of the order</td>
+</tr>
+<tr>
+<td>createdOn</td>
+<td>string</td>
+<td>Last updated status of the order</td>
+</tr>
+<tr>
+<td>scripCount</td>
+<td>string</td>
+<td>Last updated status of the order</td>
+</tr>
+</tbody>
+</table>
+<h3 id="delete-basket">Delete Basket<a class="headerlink" href="#delete-basket" title="Permanent link">&para;</a></h3>
+<p><strong>Request Structure</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>{
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    &quot;userId&quot;: &quot;&lt;USER_ID&gt;&quot;,
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    &quot;basketId&quot; :20,
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>}
+</code></pre></div>
+<p><strong>Input parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>basketId</td>
+<td>Int</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Structure</strong></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>{
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    &quot;status&quot;: &quot;Ok&quot;,
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    &quot;message&quot;: &quot;Success&quot;,
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    &quot;result&quot;: []
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>}
+</code></pre></div>
+<strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>Order specific identification generated by nidhi</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>Last updated status of the order</td>
+</tr>
+<tr>
+<td>result</td>
+<td>string</td>
+<td>Last updated status of the order</td>
+</tr>
+</tbody>
+</table>
+<!-- 
+### Retrieve Basket Report
+
+
+__Request Structure__
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>{
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    &quot;userId&quot;: &quot;&lt;USER_ID&quot;,
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>}
+</code></pre></div>
+
+__Input parameters__
+
+
+|Field  | Type  |Description|
+|-------|-------------------|-------------------------------|
+|userId |String |           |
+
+
+__Response Structure__
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>{
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    &quot;status&quot;: &quot;Ok&quot;,
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    &quot;message&quot;: &quot;Success&quot;,
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    &quot;result&quot;: [
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>        {
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>            &quot;basketId&quot;: 5,
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>            &quot;basketName&quot;: &quot;relia&quot;,
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>            &quot;isExecuted&quot;: &quot;0&quot;,
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>            &quot;createdOn&quot;: &quot;2023-02-15T14:12:29.634+00:00&quot;,
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>            &quot;scripCount&quot;: 3
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>        }
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    ]
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>}
+</code></pre></div>
+__Parameters__
+
+|Field| Type|   Description|
+|-------|-------------------|-------------------------------|
+|basketId|  string| Order specific identification generated by nidhi|
+|basketName|    string| Last updated status of the order |
+|isExecuted|    string| Last updated status of the order |
+|createdOn| string| Last updated status of the order |
+|scripCount|    string| Last updated status of the order | -->
+
+<h3 id="add-script-to-basket">Add Script To Basket<a class="headerlink" href="#add-script-to-basket" title="Permanent link">&para;</a></h3>
+<p><strong>Request Structure</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>{
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    &quot;userId&quot;: &quot;&lt;USER_ID&gt;&quot;,
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    &quot;basketId&quot;: &quot;1&quot;,
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    &quot;exchange&quot;: &quot;MCX&quot;,
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    &quot;token&quot;: &quot;00027&quot;,
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    &quot;tradingSymbol&quot;: &quot;SILVERMIC28FEB23&quot;,
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    &quot;qty&quot;: &quot;1&quot;,
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    &quot;price&quot;: &quot;686513&quot;,
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    &quot;expiry&quot;: &quot;2023-01-30&quot;,
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    &quot;product&quot;: &quot;CNC&quot;,
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    &quot;tranType&quot;: &quot;BUY&quot;,
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>    &quot;priceType&quot;: &quot;MKT&quot;,
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>    &quot;orderType&quot;: &quot;Regular&quot;,
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>    &quot;ret&quot;: &quot;DAY&quot;,
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>    &quot;triggerPrice&quot;: &quot;&quot;,
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>    &quot;disclosedQty&quot;: &quot;&quot;,
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>    &quot;MktProtection&quot;: &quot;&quot;,
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>    &quot;target&quot;: &quot;&quot;,
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>    &quot;stopLoss&quot;: &quot;&quot;,
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>    &quot;trailingStopLoss&quot;: &quot;&quot;,
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>    &quot;createdBy&quot;: &quot;SKY100&quot;
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>}
+</code></pre></div>
+<p><strong>Input parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>basketId</td>
+<td>Int</td>
+<td></td>
+</tr>
+<tr>
+<td>exchange</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>token</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>tradingSymbol</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>qty</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>price</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>product</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>tranType</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>priceType</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>orderType</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>triggerPrice</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>disclosedQty</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>MktProtection</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>target</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>stopLoss</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>trailingStopLoss</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>createdBy</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Structure</strong></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>{
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    &quot;status&quot;: &quot;Ok&quot;,
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    &quot;message&quot;: &quot;Success&quot;,
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    &quot;result&quot;: [
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>        {
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>            &quot;id&quot;: 1,
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>            &quot;basketId&quot;: 1,
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>            &quot;sortOrder&quot;: null,
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>            &quot;exchange&quot;: &quot;MCX&quot;,
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>            &quot;token&quot;: &quot;00027&quot;,
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>            &quot;tradingSymbol&quot;: &quot;SILVERMIC28FEB23&quot;,
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>            &quot;qty&quot;: &quot;1&quot;,
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>            &quot;price&quot;: &quot;686513&quot;,
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>            &quot;expiry&quot;: &quot;2023-01-30T00:00:00.000+00:00&quot;,
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>            &quot;product&quot;: &quot;CNC&quot;,
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>            &quot;transType&quot;: &quot;BUY&quot;,
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>            &quot;priceType&quot;: &quot;MKT&quot;,
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>            &quot;orderType&quot;: &quot;Regular&quot;,
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>            &quot;ret&quot;: &quot;DAY&quot;,
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>            &quot;triggerPrice&quot;: &quot;&quot;,
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>            &quot;disClosedQty&quot;: null,
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>            &quot;mktProtection&quot;: null,
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>            &quot;target&quot;: &quot;&quot;,
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>            &quot;stopLoss&quot;: &quot;&quot;,
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>            &quot;trailingStopLoss&quot;: &quot;&quot;
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>        }
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>    ]
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>}
+</code></pre></div>
+<strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>basketId</td>
+<td>Int</td>
+<td></td>
+</tr>
+<tr>
+<td>sortOrder</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>exchange</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>token</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>tradingSymbol</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>qty</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>price</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>expiry</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>product</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>tranType</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>priceType</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>orderType</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>ret</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>triggerPrice</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>disclosedQty</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>MktProtection</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>target</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>stopLoss</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>trailingStopLoss</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-retrive-scrips">Get Retrive Scrips<a class="headerlink" href="#get-retrive-scrips" title="Permanent link">&para;</a></h3>
+<p><strong>Request Structure</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>{
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    &quot;basketId&quot;: &quot;1&quot;,
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    &quot;userId&quot;: &quot;&lt;USER_ID&gt;&quot;,
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>}
+</code></pre></div>
+<p><strong>Input parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>basketId</td>
+<td>Int</td>
+<td></td>
+</tr>
+<tr>
+<td>userId</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Structure</strong></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>{
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    &quot;status&quot;: &quot;Ok&quot;,
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    &quot;message&quot;: &quot;Success&quot;,
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    &quot;result&quot;: [
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>           {
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>            &quot;id&quot;: 1,
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>            &quot;basketId&quot;: 1,
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>            &quot;sortOrder&quot;: null,
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>            &quot;exchange&quot;: &quot;MCX&quot;,
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>            &quot;token&quot;: &quot;00027&quot;,
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>            &quot;tradingSymbol&quot;: &quot;SILVERMIC28FEB23&quot;,
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>            &quot;qty&quot;: &quot;1&quot;,
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>            &quot;price&quot;: &quot;686513&quot;,
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>            &quot;expiry&quot;: &quot;2023-01-30T00:00:00.000+00:00&quot;,
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>            &quot;product&quot;: &quot;CNC&quot;,
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>            &quot;transType&quot;: &quot;BUY&quot;,
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>            &quot;priceType&quot;: &quot;MKT&quot;,
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>            &quot;orderType&quot;: &quot;Regular&quot;,
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>            &quot;ret&quot;: &quot;DAY&quot;,
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>            &quot;triggerPrice&quot;: &quot;&quot;,
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>            &quot;disClosedQty&quot;: null,
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>            &quot;mktProtection&quot;: null,
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>            &quot;target&quot;: &quot;&quot;,
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>            &quot;stopLoss&quot;: &quot;&quot;,
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>            &quot;trailingStopLoss&quot;: &quot;&quot;
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>        }
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a>    ]
+<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>}
+</code></pre></div>
+<strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>basketId</td>
+<td>Int</td>
+<td></td>
+</tr>
+<tr>
+<td>sortOrder</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>exchange</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>token</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>tradingSymbol</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>qty</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>price</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>expiry</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>product</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>tranType</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>priceType</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>orderType</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>ret</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>triggerPrice</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>disclosedQty</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>MktProtection</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>target</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>stopLoss</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>trailingStopLoss</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="delete-scrip-in-basket">Delete Scrip in Basket<a class="headerlink" href="#delete-scrip-in-basket" title="Permanent link">&para;</a></h3>
+<p><strong>Request Structure</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>{
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    &quot;userId&quot;: &quot;&lt;SKY100&gt;&quot;,
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    &quot;basketId&quot;: 1,
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    &quot;scripsId&quot;: [
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>        2,3
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>    ]
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>}
+</code></pre></div>
+<p><strong>Input parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>basketId</td>
+<td>Int</td>
+<td></td>
+</tr>
+<tr>
+<td>scripsId</td>
+<td>List</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Structure</strong></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>{
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    &quot;status&quot;: &quot;Ok&quot;,
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    &quot;message&quot;: &quot;Success&quot;,
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    &quot;result&quot;: [
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>        {
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>            &quot;id&quot;: 4,
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>            &quot;basketId&quot;: 1,
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>            &quot;sortOrder&quot;: null,
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>            &quot;exchange&quot;: &quot;MCX&quot;,
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>            &quot;token&quot;: &quot;00027&quot;,
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>            &quot;tradingSymbol&quot;: &quot;SILVERMIC28FEB23&quot;,
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>            &quot;qty&quot;: &quot;1&quot;,
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>            &quot;price&quot;: &quot;686513&quot;,
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>            &quot;expiry&quot;: &quot;2023-01-30T00:00:00.000+00:00&quot;,
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>            &quot;product&quot;: &quot;CNC&quot;,
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>            &quot;transType&quot;: &quot;BUY&quot;,
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>            &quot;priceType&quot;: &quot;MKT&quot;,
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>            &quot;orderType&quot;: &quot;Regular&quot;,
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>            &quot;ret&quot;: &quot;DAY&quot;,
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>            &quot;triggerPrice&quot;: &quot;&quot;,
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>            &quot;disClosedQty&quot;: null,
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>            &quot;mktProtection&quot;: null,
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>            &quot;target&quot;: &quot;&quot;,
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>            &quot;stopLoss&quot;: &quot;&quot;,
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>            &quot;trailingStopLoss&quot;: &quot;&quot;
+<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>        }
+<a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a>    ]
+</code></pre></div>
+<strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>basketId</td>
+<td>Int</td>
+<td></td>
+</tr>
+<tr>
+<td>sortOrder</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>exchange</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>token</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>tradingSymbol</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>qty</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>price</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>expiry</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>product</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>tranType</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>priceType</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>orderType</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>ret</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>triggerPrice</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>disclosedQty</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>MktProtection</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>target</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>stopLoss</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>trailingStopLoss</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.instant", "navigation.top", "navigation.tracking", "navigation.expand", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5cf534bf.min.js"></script>
+      
+    
+  </body>
+</html>

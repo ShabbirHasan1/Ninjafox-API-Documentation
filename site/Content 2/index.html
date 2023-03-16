@@ -1,0 +1,1513 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Content%201/">
+      
+      
+        <link rel="next" href="../User%20Setting/">
+      
+      <link rel="icon" href="../assets/images/ninjafox.svg">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.0">
+    
+    
+      
+        <title>Content 2 - Middleware API Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f79797b0.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fo-content" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Middleware API Documentation" class="md-header__button md-logo" aria-label="Middleware API Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/ninjafox.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Middleware API Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Content 2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Middleware API Documentation" class="md-nav__button md-logo" aria-label="Middleware API Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/ninjafox.svg" alt="logo">
+
+    </a>
+    Middleware API Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication/" class="md-nav__link">
+        Authentication
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Content%201/" class="md-nav__link">
+        Content 1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Content 2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Content 2
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fo-content" class="md-nav__link">
+    F&amp;O Content
+  </a>
+  
+    <nav class="md-nav" aria-label="F&amp;O Content">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-chain" class="md-nav__link">
+    Option Chain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fno-screeners" class="md-nav__link">
+    FNO Screeners
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indices" class="md-nav__link">
+    Indices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#futures" class="md-nav__link">
+    Futures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-future" class="md-nav__link">
+    Detailed Future
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobile-dashboard" class="md-nav__link">
+    Mobile DashBoard
+  </a>
+  
+    <nav class="md-nav" aria-label="Mobile DashBoard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#investing" class="md-nav__link">
+    Investing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trading" class="md-nav__link">
+    Trading
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charts" class="md-nav__link">
+    Charts
+  </a>
+  
+    <nav class="md-nav" aria-label="Charts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intraday-charts" class="md-nav__link">
+    Intraday Charts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#history" class="md-nav__link">
+    History
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#corporate-action" class="md-nav__link">
+    Corporate Action
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#marketing" class="md-nav__link">
+    Marketing
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User%20Setting/" class="md-nav__link">
+        User Setting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EKYC%20APIs/" class="md-nav__link">
+        EKYC APIs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orders/" class="md-nav__link">
+        Orders
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../portfolio/" class="md-nav__link">
+        Portfolio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Funds/" class="md-nav__link">
+        Funds
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Alerts/" class="md-nav__link">
+        Alerts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Basket%20Order/" class="md-nav__link">
+        Basket Order
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fo-content" class="md-nav__link">
+    F&amp;O Content
+  </a>
+  
+    <nav class="md-nav" aria-label="F&amp;O Content">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-chain" class="md-nav__link">
+    Option Chain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fno-screeners" class="md-nav__link">
+    FNO Screeners
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indices" class="md-nav__link">
+    Indices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#futures" class="md-nav__link">
+    Futures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-future" class="md-nav__link">
+    Detailed Future
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobile-dashboard" class="md-nav__link">
+    Mobile DashBoard
+  </a>
+  
+    <nav class="md-nav" aria-label="Mobile DashBoard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#investing" class="md-nav__link">
+    Investing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trading" class="md-nav__link">
+    Trading
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charts" class="md-nav__link">
+    Charts
+  </a>
+  
+    <nav class="md-nav" aria-label="Charts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intraday-charts" class="md-nav__link">
+    Intraday Charts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#history" class="md-nav__link">
+    History
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#corporate-action" class="md-nav__link">
+    Corporate Action
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#marketing" class="md-nav__link">
+    Marketing
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Content 2</h1>
+
+<!-- | GET|/eqsectorsall |Get Multiple Stock Details along with its sectors in headings| 
+| GET|/heatmap     |Get Multiple Future Segment with 1D return %|
+| GET|/futsectorsall |Get future breakup along with 1D return %|
+| GET|/etf            |Get ETF details along with its |
+| GET|/eqscan         |Limited tabs with only 5 responses|
+| GET|/eqscanall      |All tabs with full response| 
+| GET|/futscan         |Limited tabs with only 5 responses|
+|GET |/futscanall|All tabs with full response.|
+|GET|/appversion|To check app version check. | -->
+
+<h2 id="fo-content">F&amp;O Content<a class="headerlink" href="#fo-content" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>API</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Post</td>
+<td>/restpy/get_strike_data</td>
+<td>Get Marketing Response to show in banner</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/indices</td>
+<td>Fetch Index Details</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/futures</td>
+<td>Fetch 5 Future Details</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/futuresall</td>
+<td>Get Multiple Future Details with titles</td>
+</tr>
+</tbody>
+</table>
+<h3 id="option-chain">Option Chain<a class="headerlink" href="#option-chain" title="Permanent link">&para;</a></h3>
+<p><strong>Request Structure</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    &quot;underlying&quot;: &quot;BANKNIFTY&quot;,
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    &quot;expiry&quot;: &quot;16FEB23&quot;,
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    &quot;interval&quot;: 10
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>}
+</code></pre></div>
+<p><strong>Input parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>underlying</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>expiry</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>interval</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Structure</strong></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    &quot;CE&quot;: {
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        &quot;ltp&quot;: &quot;1123.85&quot;,
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        &quot;forInsName&quot;: &quot;BANKNIFTY 16FEB 40600 CE&quot;,
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        &quot;gVal&quot;: &quot;0.04934980966015927&quot;,
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        &quot;oi&quot;: &quot;18700&quot;,
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        &quot;pdoi&quot;: &quot;18700.0&quot;,
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        &quot;pdc&quot;: &quot;1123.85&quot;,
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        &quot;token&quot;: &quot;43635&quot;
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    },
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    &quot;PE&quot;: {
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        &quot;ltp&quot;: &quot;6.4&quot;,
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        &quot;forInsName&quot;: &quot;BANKNIFTY 16FEB 40600 PE&quot;,
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        &quot;gVal&quot;: &quot;2.1375184935922014&quot;,
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        &quot;oi&quot;: &quot;752725&quot;,
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>        &quot;pdoi&quot;: &quot;752725&quot;,
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        &quot;pdc&quot;: &quot;6.4&quot;,
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>        &quot;token&quot;: &quot;43636&quot;
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    },
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    &quot;strikeprice&quot;: &quot;40600&quot;
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>},
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>{
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>    &quot;CE&quot;: {
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>        &quot;ltp&quot;: &quot;1018.0&quot;,
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>        &quot;forInsName&quot;: &quot;BANKNIFTY 16FEB 40700 CE&quot;,
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>        &quot;gVal&quot;: &quot;0.09361949185530213&quot;,
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>        &quot;oi&quot;: &quot;35475&quot;,
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>        &quot;pdoi&quot;: &quot;35475.0&quot;,
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>        &quot;pdc&quot;: &quot;1018.0&quot;,
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>        &quot;token&quot;: &quot;43637&quot;
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>    },
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>    &quot;PE&quot;: {
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>        &quot;ltp&quot;: &quot;7.1&quot;,
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>        &quot;forInsName&quot;: &quot;BANKNIFTY 16FEB 40700 PE&quot;,
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>        &quot;gVal&quot;: &quot;2.235488387017995&quot;,
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>        &quot;oi&quot;: &quot;787225&quot;,
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>        &quot;pdoi&quot;: &quot;787225&quot;,
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>        &quot;pdc&quot;: &quot;7.1&quot;,
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>        &quot;token&quot;: &quot;43639&quot;
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>    },
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>    &quot;strikeprice&quot;: &quot;40700&quot;
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>}
+</code></pre></div>
+<strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ltp</td>
+<td>String</td>
+<td>Equity Cash</td>
+</tr>
+<tr>
+<td>forInsName</td>
+<td>String</td>
+<td>Futures &amp; Options</td>
+</tr>
+<tr>
+<td>gVal</td>
+<td>String</td>
+<td>Currency</td>
+</tr>
+<tr>
+<td>oi</td>
+<td>Equity</td>
+<td>String</td>
+</tr>
+<tr>
+<td>pdoi</td>
+<td>String</td>
+<td>Commodity</td>
+</tr>
+<tr>
+<td>pdc</td>
+<td>String</td>
+<td>Commodity</td>
+</tr>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>Commodity</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fno-screeners">FNO Screeners<a class="headerlink" href="#fno-screeners" title="Permanent link">&para;</a></h3>
+<h3 id="indices">Indices<a class="headerlink" href="#indices" title="Permanent link">&para;</a></h3>
+<p><strong>Request Structure</strong> 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>&quot;userID&quot;:&quot;&lt;USER_ID&gt;&quot;
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>}
+</code></pre></div></p>
+<p><strong>Input parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Structure</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>{
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    &quot;status&quot;: &quot;SUCCESS&quot;,
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    &quot;message&quot;: null,
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    &quot;result&quot;: [
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        {
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>            &quot;scripName&quot;: &quot;NIFTY 50&quot;,
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>            &quot;sortOrder&quot;: 0,
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>            &quot;exchange&quot;: &quot;NSE&quot;,
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>            &quot;nextExpiry&quot;: &quot;2022-11-24&quot;,
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>            &quot;token&quot;: &quot;26000&quot;,
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>            &quot;pdc&quot;: &quot;&quot;,
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>        },
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>             {
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>            &quot;scripName&quot;: &quot;NIFTY BANK&quot;,
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>            &quot;sortOrder&quot;: 1,
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>            &quot;exchange&quot;: &quot;NSE&quot;,
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>            &quot;nextExpiry&quot;: &quot;2022-11-24&quot;,
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>            &quot;token&quot;: &quot;26009&quot;,
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>            &quot;pdc&quot;: &quot;&quot;,
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>        },
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>             {
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>            &quot;scripName&quot;: &quot;NIFTY FIN SERVICE&quot;,
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>            &quot;sortOrder&quot;: 1,
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>            &quot;exchange&quot;: &quot;NSE&quot;,
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>            &quot;nextExpiry&quot;: &quot;2022-11-24&quot;,
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>            &quot;token&quot;: &quot;26037&quot;,
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>            &quot;pdc&quot;: &quot;&quot;,
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>        }
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>    ]
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>}
+</code></pre></div>
+<p><strong>parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>scripName</td>
+<td>String</td>
+<td>Equity Cash</td>
+</tr>
+<tr>
+<td>sortOrder</td>
+<td>Int</td>
+<td>Futures &amp; Options</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td>String</td>
+<td>Currency</td>
+</tr>
+<tr>
+<td>nextExpiry</td>
+<td>String</td>
+<td>Cash</td>
+</tr>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>Commodity</td>
+</tr>
+<tr>
+<td>pdc</td>
+<td>String</td>
+<td>Commodity</td>
+</tr>
+</tbody>
+</table>
+<!-- ## Indicesall
+
+__Request Structure__
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>{
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>&quot;userID:&quot;&lt;USER_ID&gt;&quot;
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>}
+</code></pre></div>
+
+__Input parameters__
+
+|Field  | Type  |Description|
+|-------|-------------------|-------------------------------|
+|userId |String |    -->
+
+<h3 id="futures">Futures<a class="headerlink" href="#futures" title="Permanent link">&para;</a></h3>
+<p><strong>Request Structure</strong> </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>{
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>&quot;userID:&quot;&lt;USER_ID&gt;&quot;
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>}
+</code></pre></div>
+<p><strong>Input parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Structure</strong></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>{
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    &quot;status&quot;: &quot;SUCCESS&quot;,
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    &quot;message&quot;: null,
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    &quot;result&quot;: [
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>        {
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>            &quot;scripName&quot;: &quot;NIFTY DEC FUT&quot;,
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>            &quot;sortOrder&quot;: 0,
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>            &quot;exchange&quot;: &quot;NFO&quot;,
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>            &quot;nextExpiry&quot;: &quot;2022-11-24&quot;,
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>            &quot;token&quot;: &quot;26000&quot;,
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>            &quot;pdc&quot;: &quot;&quot;,
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>        },
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>             {
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>            &quot;scripName&quot;: &quot;BANKNIFTY DEC FUT&quot;,
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>            &quot;sortOrder&quot;: 1,
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>            &quot;exchange&quot;: &quot;NFO&quot;,
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>            &quot;nextExpiry&quot;: &quot;2022-11-24&quot;,
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>            &quot;token&quot;: &quot;26009&quot;,
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>            &quot;pdc&quot;: &quot;&quot;,
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>        },
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>             {
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>            &quot;scripName&quot;: &quot;FINNIFTY DEC FUT&quot;,
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>            &quot;sortOrder&quot;: 1,
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>            &quot;exchange&quot;: &quot;NFO&quot;,
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>            &quot;expiry&quot;: &quot;2022-11-24&quot;,
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>            &quot;token&quot;: &quot;26037&quot;,
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>            &quot;pdc&quot;: &quot;&quot;,
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>        }
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>    ]
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>}
+</code></pre></div>
+<strong>parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>scripName</td>
+<td>String</td>
+<td>Equity Cash</td>
+</tr>
+<tr>
+<td>sortOrder</td>
+<td>Int</td>
+<td>Futures &amp; Options</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td>String</td>
+<td>Currency</td>
+</tr>
+<tr>
+<td>expiry</td>
+<td>String</td>
+<td>Cash</td>
+</tr>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>Commodity</td>
+</tr>
+<tr>
+<td>pdc</td>
+<td>String</td>
+<td>Commodity</td>
+</tr>
+</tbody>
+</table>
+<h3 id="detailed-future">Detailed Future<a class="headerlink" href="#detailed-future" title="Permanent link">&para;</a></h3>
+<p><strong>Request Structure</strong> </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>{
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>&quot;userID:&quot;&lt;USER_ID&gt;&quot;
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>}
+</code></pre></div>
+<p><strong>Input parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Structure</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>{
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    &quot;status&quot;: &quot;SUCCESS&quot;,
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    &quot;message&quot;: null,
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    &quot;result&quot;: [
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>        {
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>            &quot;listId&quot;: 1,
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>            &quot;listName&quot;: &quot;NIFTY FUTURES&quot;,
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>            &quot;scrips&quot;: [
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>                {
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>                    &quot;scripName&quot;: &quot;NIFTY22NOVFUT&quot;,
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>                    &quot;sortOrder&quot;: 0,
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>                    &quot;exchange&quot;: &quot;NFO&quot;,
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>                    &quot;expiry&quot;: &quot;2022-11-24&quot;,
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>                    &quot;token&quot;: &quot;53395&quot;,
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>                    &quot;pdc&quot;: &quot;17688.65&quot;,
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>                    &quot;symbol&quot;: &quot;NIFTY22NOVFUT&quot;
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>                },
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>                {
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>                    &quot;scripName&quot;: &quot;BANKNIFTYNOVFUT&quot;,
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>                    &quot;sortOrder&quot;: 0,
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>                    &quot;exchange&quot;: &quot;NFO&quot;,
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>                    &quot;expiry&quot;: &quot;2022-11-24&quot;,
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>                    &quot;token&quot;: &quot;53394&quot;,
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>                    &quot;pdc&quot;: &quot;17688.65&quot;,
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>                    &quot;symbol&quot;: &quot;NIFTY22NOVFUT&quot;
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>                }
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>            ]
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>        },
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>        {
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>            &quot;listId&quot;: 2,
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>            &quot;listName&quot;: &quot;BANK NIFTY FUTURES&quot;,
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>            &quot;scrips&quot;: [
+<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>                {
+<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>                    &quot;scripName&quot;: &quot;BANKNIFTYNOVFUT&quot;,
+<a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>                    &quot;sortOrder&quot;: 1,
+<a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>                    &quot;exchange&quot;: &quot;NFO&quot;,
+<a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a>                    &quot;expiry&quot;: &quot;2022-11-24&quot;,
+<a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a>                    &quot;token&quot;: &quot;53394&quot;,
+<a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a>                    &quot;pdc&quot;: &quot;17688.65&quot;,
+<a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a>                    &quot;symbol&quot;: &quot;NIFTY22NOVFUT&quot;
+<a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a>                },
+<a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a>                {
+<a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a>                    &quot;scripName&quot;: &quot;NIFTY22NOVFUT&quot;,
+<a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a>                    &quot;sortOrder&quot;: 0,
+<a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a>                    &quot;exchange&quot;: &quot;NFO&quot;,
+<a id="__codelineno-8-46" name="__codelineno-8-46" href="#__codelineno-8-46"></a>                    &quot;expiry&quot;: &quot;2022-11-24&quot;,
+<a id="__codelineno-8-47" name="__codelineno-8-47" href="#__codelineno-8-47"></a>                    &quot;token&quot;: &quot;32456&quot;,
+<a id="__codelineno-8-48" name="__codelineno-8-48" href="#__codelineno-8-48"></a>                    &quot;pdc&quot;: &quot;17688.65&quot;,
+<a id="__codelineno-8-49" name="__codelineno-8-49" href="#__codelineno-8-49"></a>                    &quot;symbol&quot;: &quot;NIFTY22NOVFUT&quot;
+<a id="__codelineno-8-50" name="__codelineno-8-50" href="#__codelineno-8-50"></a>                }
+<a id="__codelineno-8-51" name="__codelineno-8-51" href="#__codelineno-8-51"></a>            ]
+<a id="__codelineno-8-52" name="__codelineno-8-52" href="#__codelineno-8-52"></a>        }
+<a id="__codelineno-8-53" name="__codelineno-8-53" href="#__codelineno-8-53"></a>    ]
+<a id="__codelineno-8-54" name="__codelineno-8-54" href="#__codelineno-8-54"></a>}
+</code></pre></div>
+<p><strong>parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>scripName</td>
+<td>String</td>
+<td>Equity Cash</td>
+</tr>
+<tr>
+<td>sortOrder</td>
+<td>Int</td>
+<td>Futures &amp; Options</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td>String</td>
+<td>Currency</td>
+</tr>
+<tr>
+<td>expiry</td>
+<td>String</td>
+<td>Cash</td>
+</tr>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>Commodity</td>
+</tr>
+<tr>
+<td>pdc</td>
+<td>String</td>
+<td>Commodity</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>Commodity</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mobile-dashboard">Mobile DashBoard<a class="headerlink" href="#mobile-dashboard" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>API</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>dashboard/investment</td>
+<td>Get investing dashboard</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>dashboard/trading</td>
+<td>Get trading dashboard</td>
+</tr>
+</tbody>
+</table>
+<h3 id="investing">Investing<a class="headerlink" href="#investing" title="Permanent link">&para;</a></h3>
+<p><strong>Request Structure</strong> </p>
+<p>No Body</p>
+<p><strong>Response Structure</strong></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>  {
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    &quot;status&quot;: &quot;Ok&quot;,
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    &quot;message&quot;: &quot;Success&quot;,
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    &quot;preferences&quot;: {
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>        &quot;mCard&quot;: &quot;M&quot;,
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>        &quot;indices&quot;: &quot;T&quot;,
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>        &quot;scanners&quot;: &quot;T&quot;,
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        &quot;cards&quot;: &quot;F&quot;,
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>        &quot;topSector&quot;: &quot;T&quot;,
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>        &quot;funds&quot;: &quot;T&quot;,
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>        &quot;holdings&quot;: &quot;T&quot;
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    },
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    &quot;indicesData&quot;: [
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>        {
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>            &quot;scripName&quot;: &quot;NIFTY 50&quot;,
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>            &quot;sortOrder&quot;: 0,
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>            &quot;exchange&quot;: &quot;NSE&quot;,
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>            &quot;expiry&quot;: null,
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>            &quot;token&quot;: &quot;26000&quot;,
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>            &quot;pdc&quot;: &quot;0&quot;,
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>            &quot;symbol&quot;: &quot;NIFTY 50 INDEX&quot;
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>        }
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>    ],
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>    &quot;topSectorData&quot;: [
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>        {
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>            &quot;sectorName&quot;: &quot;BANKING&quot;,
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>            &quot;imageUrl&quot;: &quot;https://image-utl&quot;,
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>            &quot;threeMonths&quot;: &quot;+10.46% &quot;,
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>            &quot;sixMonths&quot;: &quot;+10.46% &quot;,
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>            &quot;oneYear&quot;: &quot;+10.46% &quot;
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>        }
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>    ],
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>    &quot;mcardData&quot;: [
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>        {
+<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>            &quot;title&quot;: &quot;Social Strategy&quot;,
+<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>            &quot;subTitle&quot;: &quot;Balanced diversified portfolios&quot;,
+<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>            &quot;imageUrl&quot;: &quot;https://image-utl&quot;,
+<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a>            &quot;cardValue&quot;: &quot;+10.46%&quot;,
+<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>            &quot;buttonName&quot;: &quot;Know More&quot;,
+<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a>            &quot;buttonUrl&quot;: &quot;https://know_more&quot;,
+<a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a>            &quot;inApp&quot;: &quot;true&quot;,
+<a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a>            &quot;cardColor&quot;: &quot;FFF8E5&quot;,
+<a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a>            &quot;buttonColor&quot;: &quot;FFF8E5&quot;
+<a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a>        } 
+<a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a>    ]
+<a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a>}
+</code></pre></div>
+<strong>parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>preferences </td>
+<td>String</td>
+<td>Equity Cash</td>
+</tr>
+<tr>
+<td>indicesData  </td>
+<td>List</td>
+<td>Futures &amp; Options</td>
+</tr>
+<tr>
+<td>topSectorData</td>
+<td>List</td>
+<td>Currency</td>
+</tr>
+<tr>
+<td>mcardData </td>
+<td>List</td>
+<td>Cash</td>
+</tr>
+</tbody>
+</table>
+<h3 id="trading">Trading<a class="headerlink" href="#trading" title="Permanent link">&para;</a></h3>
+<p><strong>Request Structure</strong> </p>
+<p>No Body  </p>
+<p><strong>Response Structure</strong> </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>{
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    &quot;status&quot;: &quot;Ok&quot;,
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    &quot;message&quot;: &quot;Success&quot;,
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    &quot;preference&quot;: [
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>        {
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>            &quot;key&quot;: &quot;positions&quot;,
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>            &quot;show&quot;: &quot;T&quot;,
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>            &quot;isEnabled&quot;: &quot;T&quot;,
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>            &quot;sortOrder&quot;: &quot;1&quot;
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>        }
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    ],
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>    &quot;futuresData&quot;: [],
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>    &quot;fnoScannersData&quot;: [],
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>    &quot;heatMapData&quot;: [
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>        {
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>            &quot;sectorId&quot;: 1,
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>            &quot;sectorName&quot;: &quot;METAL&quot;,
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>            &quot;oneDay&quot;: &quot;+10.46&quot;
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>        }
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>    ]
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>}
+</code></pre></div>
+<p><strong>parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>preferences </td>
+<td>String</td>
+<td>Equity Cash</td>
+</tr>
+<tr>
+<td>futuresData  </td>
+<td>String</td>
+<td>Futures &amp; Options</td>
+</tr>
+<tr>
+<td>fnoScannersData</td>
+<td>String</td>
+<td>Currency</td>
+</tr>
+<tr>
+<td>heatMapData </td>
+<td>String</td>
+<td>Cash</td>
+</tr>
+</tbody>
+</table>
+<h2 id="charts">Charts<a class="headerlink" href="#charts" title="Permanent link">&para;</a></h2>
+<h3 id="intraday-charts">Intraday Charts<a class="headerlink" href="#intraday-charts" title="Permanent link">&para;</a></h3>
+<h3 id="history">History<a class="headerlink" href="#history" title="Permanent link">&para;</a></h3>
+<h2 id="corporate-action">Corporate Action<a class="headerlink" href="#corporate-action" title="Permanent link">&para;</a></h2>
+<h2 id="marketing">Marketing<a class="headerlink" href="#marketing" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>API</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>/marketing</td>
+<td>Get Marketing Response to show in banner</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Request Structure</strong> </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>{
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>&quot;userID:&quot;&lt;USER_ID&gt;&quot;
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>}
+</code></pre></div>
+<p><strong>Input parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Structure</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>{
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  &quot;stat&quot;: &quot;ok&quot;,
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>  &quot;message&quot;: &quot;if(stat is ok) ? return &#39;success&#39; : &#39;fail message&#39;&quot;,
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>  &quot;result&quot;: [
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    {
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>      &quot;title&quot;: &quot;Social Strategy&quot;,
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>      &quot;subTitle&quot;: &quot;Balanced diversified portfolios&quot;,
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>      &quot;imageUrl&quot;: &quot;https://image-utl&quot;,
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>      &quot;cardValue&quot;: &quot;+10.46%&quot;,
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>      &quot;buttonName&quot;: &quot;Know More&quot;,
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>      &quot;buttonUrl&quot;: &quot;https://know_more&quot;,
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>      &quot;inApp&quot;: true, // if(true) open in app via webview else open in Browser
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>      &quot;cardColor&quot;: &quot;FFF8E5&quot;
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>     &quot;buttonColor&quot;: &quot;FFF8E5&quot; 
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>    },
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>    {
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>      &quot;title&quot;: &quot;Social Strategy&quot;,
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>      &quot;subTitle&quot;: &quot;Balanced diversified portfolios&quot;,
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>      &quot;imageUrl&quot;: &quot;https://image-utl&quot;,
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>      &quot;cardValue&quot;: &quot;+10.46%&quot;,
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>      &quot;buttonName&quot;: &quot;Know More&quot;,
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>      &quot;buttonUrl&quot;: &quot;https://know_more&quot;,
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>      &quot;inApp&quot;: true, // if(true) open in app via webview else open in Browser
+<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>      &quot;cardColor&quot;: &quot;FFF8E5&quot;
+<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>     &quot;buttonColor&quot;: &quot;FFF8E5&quot; 
+<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>    },
+<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>    {
+<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>      &quot;title&quot;: &quot;Social Strategy&quot;,
+<a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a>      &quot;subTitle&quot;: &quot;Balanced diversified portfolios&quot;,
+<a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a>      &quot;imageUrl&quot;: &quot;https://image-utl&quot;,
+<a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a>      &quot;cardValue&quot;: &quot;+10.46%&quot;,
+<a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>      &quot;buttonName&quot;: &quot;Know More&quot;,
+<a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a>      &quot;buttonUrl&quot;: &quot;https://know_more&quot;,
+<a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a>      &quot;inApp&quot;: true, // if(true) open in app via webview else open in Browser
+<a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a>      &quot;cardColor&quot;: &quot;FFF8E5&quot;
+<a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a>     &quot;buttonColor&quot;: &quot;FFF8E5&quot; 
+<a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a>    }
+<a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a>  ]
+<a id="__codelineno-12-39" name="__codelineno-12-39" href="#__codelineno-12-39"></a>}
+</code></pre></div>
+<p><strong>parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>String</td>
+<td>Equity Cash</td>
+</tr>
+<tr>
+<td>subTitle</td>
+<td>String</td>
+<td>Futures &amp; Options</td>
+</tr>
+<tr>
+<td>imageUrl</td>
+<td>String</td>
+<td>Currency</td>
+</tr>
+<tr>
+<td>cardValue</td>
+<td>String</td>
+<td>Cash</td>
+</tr>
+<tr>
+<td>buttonName</td>
+<td>String</td>
+<td>Commodity</td>
+</tr>
+<tr>
+<td>buttonUrl</td>
+<td>String</td>
+<td>Commodity</td>
+</tr>
+<tr>
+<td>inApp</td>
+<td>String</td>
+<td>Commodity</td>
+</tr>
+<tr>
+<td>cardColor</td>
+<td>String</td>
+<td>Commodity</td>
+</tr>
+<tr>
+<td>buttonColor</td>
+<td>String</td>
+<td>Commodity</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.instant", "navigation.top", "navigation.tracking", "navigation.expand", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5cf534bf.min.js"></script>
+      
+    
+  </body>
+</html>
