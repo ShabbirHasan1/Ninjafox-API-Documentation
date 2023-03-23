@@ -4,7 +4,7 @@ title: Introduction
 
 ## Introduction 
 
-![Image](../assets/images/MwAP.png)
+![Image](/assets/images/MwAP.png)
 
 
 NinjaFox APIs are a collection of Fast, High Performing, High Complex Trading Middleware stack. The middleware is designed to handle over 80% of the load of the traditional RMS/OMS Systems by latest technologies. Scalability, Security and Stability of the trading application stack are handled by the Middleware Systems.  
@@ -15,10 +15,13 @@ NinjaFox also incorporates Customer facing modules such as Account Openings, Rep
 
 ## Architecture
 
-![Image](../assets/images/Group 37.svg)
+![Image](/assets/images/Group 37.svg)
 
 
 ## Base URL 
 
 [https://api.codifi.in/](https://api.codifi.in/)
+
+
+
 

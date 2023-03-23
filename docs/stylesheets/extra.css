@@ -113,10 +113,10 @@ a.md-logo img {
 
 }
 
-.md-sidebar--secondary .md-sidebar__scrollwrap {
+/* .md-sidebar--secondary .md-sidebar__scrollwrap {
     background: #f6f6f6;
     border-radius: 4px !important;
-}
+} */
 
 .md-search__form {
     background: #f6f6f6;
@@ -317,7 +317,7 @@ table thead {
 .md-sidebar--secondary .md-sidebar__scrollwrap {
     background: #afd6b142;
     border-radius: 4px !important;
-    height: auto !important;
+    max-height: calc(100vh - 120px) !important;
 }
 
 @media screen and (min-width: 60em) {

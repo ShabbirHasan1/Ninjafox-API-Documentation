@@ -1,12 +1,14 @@
 ---
+
 title: Content 1
+
 ---
 
 ## Market Watch
 
 The Market Watch services is used to retrieve watchlist of a particular User. All valid instruments can be added to the Market Watch. The count of the Market Watch and total number of scrips per market watch is configurable during the installation of the middleware.
 
-|Method	     |API   	|Detail        |
+|Method	     |API   	|Detail             |
 |------------|----------|------------------ |
 | Post|marketWatch/createMW|Create marketWatch| 
 | Post|marketWatch/getAllMwScrips |Get all Market Watch & scrips from Market Watch.|
@@ -32,7 +34,7 @@ __Input parameters__
 
 |Field	| Type	|Description|
 |-------|-------------------|-------------------------------|
-|userId	|String	| The unique, permanent user ID registered with the broker       |
+|userId	|String	| The unique, permanent user ID registered with the broker|
 
 
 __Response Structure__
@@ -92,8 +94,8 @@ __Request Structure__
 __Input parameters__
 
 |Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|userId	|String	| The unique, permanent user ID registered with the broker         |
+|-------|-------------------|---------------------------------------------|
+|userId	|String	| The unique, permanent user ID registered with the broker|
 
 
 
@@ -134,9 +136,9 @@ __Parameters__
 
 |Field	     |Type   	|description        |
 |------------|----------|------------------ |
-|mwId	 |String       |Unique market watch ID        |
-|mwName	 |String	    |Unique market watch Name  |
-|scrips       |String	    |List of scripts in market watch    |
+|mwId	 |String        |Unique market watch ID              |
+|mwName	 |String	    |Unique market watch Name           |
+|scrips  |String	    |List of scripts in market watch    |
 
 
 
@@ -190,10 +192,10 @@ __Parameters__
 |segment	 |String	    |Segment the instrument belongs to |
 |token       |String	    |Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details          |
 |tradingSymbol |String  |Exchange tradingsymbol of the of the instrument|
-|expiry    	 |Date	    | Expiry date of the Contract         |
-|sOrder   |String	    |  Sorting Order of Market Watch        |
-|pdc          |String	    |  previous date closed      |
-|symbol     	 |String	    |  |
+|expiry    	   |Date	    | Expiry date of the Contract         |
+|sOrder        |String	    |  Sorting Order of Market Watch      |   
+|pdc           |String	|  previous date closed      |
+|symbol        |String| Exchange symbol of the of the instrument  |
 |formattedInsName  |String   | Formatted Instrument Name |
 
 ### Rename MarketWatch
@@ -440,16 +442,16 @@ __Parameters__
 
 |Field	     |Type   	|description        |
 |------------|----------|------------------ |
-|token	 |Int       |Equity Cash        |
-|exchange	 |String	    |Futures & Options  |
-|segment       |String	    |Currency           |
-|symbol |String  |Cash               |
-|tradingSymbol    	 |String	    |Commodity          |
-|formattedInsName   |String	    |Commodity          |
-|pdc    	 |String	    |Commodity          |
-|lotSize    	 |String	    |Commodity          |
-|tickSize    	 |String	    |Commodity          |
-|sortOrder    	 |Int	    |Commodity          |
+|token	 |Int       |Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details        |
+|exchange	 |String	    |Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)  |
+|segment       |String	    |Segment is ( EQ , FUT , PE , CE )           |
+|symbol |String  |Exchange symbol of the of the instrument               |
+|tradingSymbol    	 |String	    |Exchange tradingsymbol of the of the instrument          |
+|formattedInsName   |String	    |Formatted Instrument Name          |
+|pdc    	 |String	    |Previce Day Close Value          |
+|lotSize    	 |String	    |Quantity of a single lot          |
+|tickSize    	 |String	    | Ticker Size Of The Scrip (in paisa).Tick size is the minimum price change between different bid and offer prices of an asset traded on an exchange platform         |
+|sortOrder    	 |Int	    | order of script in list         |
 
 
 
@@ -478,8 +480,8 @@ __Input parameters__
 
 |Field	| Type	|Description|
 |-------|-------------------|-------------------------------|
-|Exchange	|String	|           |
-|symbol  	|String	|           |
+|Exchange	|String	|Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)           |
+|symbol  	|String	| Exchange symbol of the of the instrument          |
 
 
 
@@ -497,21 +499,20 @@ __Response Structure__
             "formattedInsName": "INFY-EQ",
             "weekTag": "null",
             "companyName": "INFOSYS LIMITED"
-        },
+        }
 }
 ```
 __Parameters__
 
-
 |Field	     |Type   	|description        |
 |------------|----------|------------------ |
-|exchange	 |String       |Equity Cash        |
-|segment	 |String	    |Futures & Options  |
-|symbol       |String	    |Currency           |
-|token |String  |Cash               |
-|formattedInsName    	 |String	    |Commodity          |
-|weekTag   |String	    |Commodity          |
-|companyName    	 |String	    |Commodity          |
+|exchange	 |String       |Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)        |
+|segment	 |String	    |Segment is ( EQ , FUT , PE , CE )  |
+|symbol       |String	    |Exchange symbol of the of the instrument          |
+|token |String  |Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details               |
+|formattedInsName    	 |String	    |Formatted Instrument Name          |
+|weekTag   |String	    |          |
+|companyName    	 |String	    |          |
 
 
 ### ContractInfo
@@ -529,8 +530,8 @@ __Input parameters__
 
 |Field	| Type	|Description|
 |-------|-------------------|-------------------------------|
-|token	|String	|           |
-|exch  	|String	|           |
+|token	|String	|Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details           |
+|exch  	|String	|Exchange (NSE or BSE or NFO or MCX)           |
 
 
 
@@ -566,15 +567,15 @@ __Parameters__
 
 |Field	     |Type   	|description        |
 |------------|----------|------------------ |
-|exchange	 |String       |Equity Cash        |
-|token	 |String	    |Futures & Options  |
-|tradingSymbol       |String	    |Currency           |
-|lotSize |String  |Cash               |
-|tickSize    	 |String	    |Commodity          |
-|symbol   |String	    |Commodity          |
-|formattedInsName    	 |String	    |Commodity          |
-|pdc    	 |String	    |Commodity          |
-|insType    	 |String	    |Commodity          |
+|exchange	 |String       |Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)        |
+|token	 |String	    |Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details  |
+|tradingSymbol       |String	    | Exchange tradingsymbol of the of the instrument          |
+|lotSize |String  |Quantity of a single lot               |
+|tickSize    	 |String	    | Ticker Size Of The Scrip (in paisa).Tick size is the minimum price change between different bid and offer prices of an asset traded on an exchange platform         |
+|symbol   |String	    |Exchange symbol of the of the instrument          |
+|formattedInsName    	 |String	    | Formatted Instrument Name         |
+|pdc    	 |String	    |Previce Day Close Value          |
+|insType    	 |String	    |          |
 
 
 ### Contract Master
@@ -607,7 +608,9 @@ __Response Structure__
       "3M": "+10.46%",
       "6M": "+10.46%",
       "1Y": "+10.46%",
-    },
+    }
+  ]
+}
 ```
 
 ### Screeners

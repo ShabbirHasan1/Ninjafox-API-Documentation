@@ -39,7 +39,7 @@ __Response Structure__
   	    "mstickyorder:"0", 
   	    "mTheme":"0",
         "msingleDepth":"0", 
-        "mfixedHeader":"0", 
+        "mfixedHeader":"0" 
 }
 
 ```
@@ -48,11 +48,11 @@ __parameters__
 
 |Field	     |Type   	|description        |
 |------------|----------|------------------ |
-|chart	 |String       |Equity Cash        |
-|Poastatus	 |String	    |Futures & Options  |
-|mstickyorder    |String	    |Currency           |
-|msingleDepth      |String    |Cash               |
-|mfixedHeader    	 |String	    |Commodity          |
+|chart	 |String       |The name of Chart platform        |
+|Poastatus	 |String	    |A power of attorney status  |
+|mstickyorder    |String	    |Mobile Sticky order flag           |
+|msingleDepth      |String    |Mobile Single Depth flag               |
+|mfixedHeader    	 |String	    |Mobile Fixed Header flag          |
 
 
 ### Web Preference
@@ -83,7 +83,7 @@ __Response Structure__
   	     "wstickyorder:"0", 
   	     "wTheme":"0",
          "wsingleDepth":"0", 
-          "mwatch":"0", 
+          "mwatch":"0"
     }
 ```
 __parameters__
@@ -91,9 +91,9 @@ __parameters__
 
 |Field	     |Type   	|description        |
 |------------|----------|------------------ |
-|chart	 |String       |Equity Cash            |
-|Poastatus	 |String	    |Futures & Options  |
-|wstickyorder    |String	    |Currency       |
-|wTheme      |String    |Cash               |
-|wsingleDepth    	 |String	    |Commodity  |
-|mwatch    	 |String	    |Commodity          |
+|chart	 |String       |The name of Chart platform           |
+|Poastatus	 |String	    |A power of attorney status  |
+|wstickyorder    |String	    |Mobile Sticky order flag       |
+|wTheme      |String    |Web theme Flag               |
+|wsingleDepth    	 |String	    |Web single depth flag  |
+|mwatch    	 |String	    |market watch flag          |

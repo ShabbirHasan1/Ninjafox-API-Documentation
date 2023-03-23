@@ -1,18 +1,9 @@
 ---
+
 title: Content 2
+
 ---
 
-
-
-<!-- | GET|/eqsectorsall |Get Multiple Stock Details along with its sectors in headings| 
-| GET|/heatmap     |Get Multiple Future Segment with 1D return %|
-| GET|/futsectorsall |Get future breakup along with 1D return %|
-| GET|/etf            |Get ETF details along with its |
-| GET|/eqscan         |Limited tabs with only 5 responses|
-| GET|/eqscanall      |All tabs with full response| 
-| GET|/futscan         |Limited tabs with only 5 responses|
-|GET |/futscanall|All tabs with full response.|
-|GET|/appversion|To check app version check. | -->
 
 ## F&O Content
 
@@ -40,9 +31,9 @@ __Input parameters__
 
 |Field	| Type	|Description|
 |-------|-------------------|-----------------------|
-|underlying	|String	|           |
-|expiry  	|String	|           |
-|interval  	|String	|           |
+|underlying	|String	| Script Name  |
+|expiry  	|String	|Expiry date (for derivatives)  |
+|interval  	|String	|The interval of strike price from the spot. |
 
 
 
@@ -100,11 +91,11 @@ __Parameters__
 |Field	     |Type   	|description        |
 |------------|----------|------------------ |
 |ltp	 |String       |Last available NAV price of the fund       |
-|forInsName	 |String	    | |
-|gVal       |String	    |           |
-|oi |String  |The Open Interest for a futures or options contract ?               |
-|pdoi    	 |String	    |          |
-|pdc   |String	    |Previce Day Close Value          |
+|forInsName	 |String	    |Last trade price of the scrip. The price at which the final trade happens between a buyer and a seller |
+|gVal       |String	    | Graph Value          |
+|oi |String  |Open Interest |
+|pdoi    	 |String	    | Previous day Open Intrest         |
+|pdc   |String	    |Previce Day Close Value         |
 |token    	 |String	    |Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details          |
  
 ### FNO Screeners
@@ -167,9 +158,9 @@ __parameters__
 |Field	     |Type   	|description        |
 |------------|----------|------------------ |
 |scripName	 |String       |The Name of script        |
-|sortOrder	 |Int	    |  |order of script in list
+|sortOrder	 |Int	      |order of script in list|
 |exchange    |String	    | Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)          |
-|nextExpiry  |String    |               |
+|nextExpiry  |String    | Next expiry of the script              |
 |token    	 |String	    | Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details         |
 |pdc         |String	    |Previce Day Close Value          |
 
@@ -269,7 +260,7 @@ __Input parameters__
 
 |Field	| Type	|Description|
 |-------|-------------------|-------------------------------|
-|userId	|String	|   
+|userId	|String	|The unique, permanent user ID registered with the broker|   
 
 __Response Structure__
 
@@ -420,10 +411,10 @@ __parameters__
 
 |Field	     |Type   	|description        |
 |------------|----------|------------------ |
-|preferences  	 |String       |Equity Cash        |
-|indicesData   	 |List	    |Futures & Options  |
-|topSectorData     |List	    |Currency           |
-|mcardData        |List    |Cash               |
+|preferences  	 |String       |User Preference in boolean flag        |
+|indicesData   	 |List	    |List of Indices script data  |
+|topSectorData     |List	    |List of Top sector data           |
+|mcardData        |List    |List of  Card data               |
 
 
 ### Trading
@@ -463,10 +454,10 @@ __parameters__
 
 |Field	     |Type   	|description        |
 |------------|----------|------------------ |
-|preferences  	 |String       |Equity Cash        |
-|futuresData   	 |String	    |Futures & Options  |
-|fnoScannersData      |String	    |Currency           |
-|heatMapData       |String    |Cash               |
+|preferences  	 |String       |User Preference       |
+|futuresData   	 |String	    |Future Script Data  |
+|fnoScannersData      |String	    |Future and Option Scanner Data           |
+|heatMapData       |String    |Heat Map Data               |
 
 ## Charts
 
@@ -497,7 +488,7 @@ __Input parameters__
 
 |Field	| Type	|Description|
 |-------|-------------------|-------------------------------|
-|userId	|String	|   
+|userId	|String	|  The unique, permanent user ID registered with the broker| 
 
 __Response Structure__
 
@@ -549,15 +540,15 @@ __parameters__
 
 |Field	     |Type   	|description        |
 |------------|----------|------------------ |
-|title	 |String       |Equity Cash        |
-|subTitle	 |String	    |Futures & Options  |
-|imageUrl    |String	    |Currency           |
-|cardValue      |String    |Cash               |
-|buttonName    	 |String	    |Commodity          |
-|buttonUrl         |String	    |Commodity          |
-|inApp      |String	    |Commodity          |
-|cardColor      |String	    |Commodity          |
-|buttonColor      |String	    |Commodity          |
+|title	 |String       |Card Title         |
+|subTitle	 |String	    |Description of the title  |
+|imageUrl    |String	    |Image URL           |
+|cardValue      |String    |Card Value in percentage               |
+|buttonName    	 |String	    |Content of Button          |
+|buttonUrl         |String	    |Content of Button redirect URL          |
+|inApp      |String	    |App Flag for Web and Mobile view          |
+|cardColor      |String	    |Color code of the card          |
+|buttonColor      |String	    |Button Color code of the card          |
 
 
 

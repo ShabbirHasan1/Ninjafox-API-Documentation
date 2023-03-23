@@ -1,5 +1,7 @@
 ---
+
 title: Authentication
+
 ---
 
 The authentication mechanism is handled by customising one of the most reliable open source IAM (Identity & Access Management) in the planet. The authentication layer takes care of integration with RMS/OMS, Mutual Funds and other backend systems.
@@ -57,7 +59,7 @@ __parameters__
 |Field	| Type	|Description|
 |-------|-------------------|-------------------------------|
 |accessToken	|String	|The authentication token that's used with every subsequent request Unless this is invalidated using the API, or invalidated by a master-logout from the Kite Web trading terminal, it'll expire at 6 AM on the next day (regulatory requirement)     |
-|tokenType	|String	| |
+|tokenType	|String	|Token type i.e, 'Bearer' |
 |refreshToken	|String	|A token for getting long standing read permissions. This is only available to certain approved platforms |
 
  
@@ -328,7 +330,7 @@ __Input parameters__
 |-------|-------------------|-------------------------------|
 |userId	|String	|The unique, permanent user ID registered with the broker   |
 |source	|String	|Request source from which platform eg., 'MOBILEAPI' or 'RESTAPI'   |
-|otp	|String	|   |
+|otp	|String	|One Time Password   |
 
 
 
@@ -354,7 +356,7 @@ __parameters__
 |Field	| Type	|Description|
 |-------|-------------------|-------------------------------|
 |accessToken	|String	|The authentication token that's used with every subsequent request Unless this is invalidated using the API, or invalidated by a master-logout from the Kite Web trading terminal, it'll expire at 6 AM on the next day (regulatory requirement)     |
-|tokenType	|String	| |
+|tokenType	|String	|Token type i.e, 'Bearer' |
 |refreshToken	|String	|A token for getting long standing read permissions. This is only available to certain approved platforms |
 
 ## User Preference
@@ -384,7 +386,7 @@ __Input parameters__
 |Field	| Type	|Description|
 |-------|-------------------|-------------------------------|
 |source	|String	|Request source from which platform eg., 'MOBILEAPI' or 'RESTAPI'   |
-|keyVariable	|String	|   |
+|keyVariable	|String	| Preference key Variable  |
 
 
 
@@ -411,8 +413,8 @@ __parameters__
 |Field	| Type	|Description|
 |-------|-------------------|-------------------------------|
 |id	|String	|Unique ID     |
-|keyVariable	|String	| |
-|value	|String	| |
+|keyVariable	|String	|Preference key Variable |
+|value	|String	|Preference key Value |
 |source	|String	|Request source from which platform eg., 'MOBILEAPI' or 'RESTAPI' |
 
 
@@ -441,8 +443,8 @@ __Input parameters__
 |Field	| Type	|Description|
 |-------|-------------------|-------------------------------|
 |id	|String	|Unique ID   |
-|keyVariable	|String	|   |
-|value	|String	|   |
+|keyVariable	|String	|Preference key Variable   |
+|value	|String	| Preference key Value  |
 
 
 
@@ -453,7 +455,7 @@ __Response Structure__
     "status": "Ok",
     "message": "Success",
     "result": null
-}  ]
+}  
 
 ```
 
