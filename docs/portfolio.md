@@ -6,35 +6,15 @@ title: Portfolio
 
 This API lets you retrieve holdings and positions in your portfolio.
 
-|Method	|API                |Detail                         |
-|-------|-------------------|-------------------------------|
-|POST	|	/holdings       |Retrieve the list of long term equity holdings
-|POST	| /positions	    |Retrieve the list of short term positions
-|POST	|/positions/convert	|Convert intraday to long term or long term to intraday 
+| Method | API                | Detail                                                 |
+| ------ | ------------------ | ------------------------------------------------------ |
+| GET	|	/holdings       |Retrieve the list of long term equity holdings
+| POST   | /positions         | Retrieve the list of short term positions              |
+| POST   | /positions/convert | Convert intraday to long term or long term to intraday |
 
 ## Holdings
 
-Holdings contain the long term equity Holdings of the customer. All the financial instruments in the holdings reside in the customer’s DEMAT account indefinitely until its sold or is delisted or changed by the exchanges. Changes to DEMAT account is settled in T+1 days. 
-
-
-
-
-__Request Structure__
-
-```
-{
-    "userId": "<USER_ID>",
-    "actId": "<USER_AC>",
-    "prd": "C"
-}
-```
-__Input parameters__
-
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|userId	|String	|The unique, permanent user ID registered with the broker           |
-|actId	|String	| Users Logged in ID will be displayed         |
-|prd    | String|           |
+Holdings contain the long term equity Holdings of the customer. All the financial instruments in the holdings reside in the customer’s DEMAT account indefinitely until its sold or is delisted or changed by the exchanges. Changes to DEMAT account is settled in T+1 days.
 
 __Response Structure__
 
@@ -47,35 +27,42 @@ __Response Structure__
             "stat": "Ok",
             "poaStatus": 0,
             "holdingVal": {
-                "isin": "INE593W01010",
-                "buyPrice": "0",
-                "totalQty": "5",
+                "isin": "INE336H01023",
+                "buyPrice": "11.95",
+                "totalQty": 3,
                 "usedQty": "0",
-                "sellableQty": 5,
-                "colQty": "0",
+                "sellableQty": 0,
+                "colQty": null,
                 "btstQty": "0",
                 "authQty": 0,
+                "authFlag": false,
                 "authDate": "",
                 "netPnl": 0,
                 "soldValue": "0.000000",
                 "benQty": null,
-                "unpledgedQty": "0",
-                "tmColQty": "0",
+                "unpledgedQty": null,
+                "tmColQty": null,
                 "dpQty": null,
                 "pledgeQty": 0,
                 "dayPnl": 0,
                 "ltp": "0",
+                "nonPoaQty": 3,
                 "exDetails": [
                     {
-                        "symbol": "FOCUS-EQ",
+                        "symbol": "GAYAPROJ-BE",
                         "exchange": "NSE",
-                        "token": "6836",
-                        "previousClose": "316.85"
+                        "token": "25027",
+                        "previousClose": "6.15"
+                    },
+                    {
+                        "symbol": "GAYAPROJ",
+                        "exchange": "BSE",
+                        "token": "532767",
+                        "previousClose": "6.17"
                     }
                 ]
             }
         }
- 
     ]
 }
 ```
@@ -85,27 +72,33 @@ __Parameters__
 |Field	|Type	|Description|
 |-------|-------------------|-------------------------------|
 |isin	|String	|The standard ISIN representing stocks listed on multiple exchanges|
+|realizedpnl     |
 |buyPrice	|String	|Segment Buy Price|
-|totalQty	|String	|Total Quantity of position / Holdings|
+|totalQty	|string	||
 |usedQty	|String	|Used Quantity of position / Holdings|
 |sellableQt |String	|Sell able quantity of Holding / Position|
 |colQty	    |String	||
 |btstQty	|String	||
-|authQty	|Int	||
-|authDate	|String	||
+|authQty	|int	||
+|authDate	|Null	||
 |netPnl 	|Int|Net Profit and Loss Value|
-|soldValue  |String	||
-|benQty     |    String	||                                                            
-|unpledgedQty |       String	||                                                            
-|tmColQty   |      String	||                                                            
-|dpQty      |      String	||                                                         
-|pledgeQty  |     Int	||                                                              
-|dayPnl     |      Int	| Day Profit and Loss will be displayed|                                                          
-|ltp        |      String	|Last trade price of the scrip. The price at which the final trade happens between a buyer and a seller|                                                       
+|soldValue  |string	||
+|benQty     |Null||                                                            
+|unpledgedQty |string||                                                            
+|tmColQty   |string	||                                                            
+|dpQty      |Null	||                                                         
+|pledgeQty  |int	||                                                              
+|dayPnl     |int	||                                                          
+|ltp        |String	|Last trade price of the scrip. The price at which the final trade happens between a buyer and a seller|                
+|nonPoaQty	    |String	| |
+|exDetails	    |List	| |
+|symbol	    |String	| |
+|exchange	    |String	| |
+|token	    |String	| |
+|previousClose	    |String	| |
+                                        
 
 ## Positions
-
-
 
 __Request Structure__
 
@@ -115,12 +108,13 @@ __Request Structure__
     "actId": "<USER_AC>",
 }
 ```
+
 __Input parameters__
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|userId	|String	|The unique, permanent user ID registered with the broker           |
-|actId	|String	|           |
+| Field  | Type   | Description                                              |
+| ------ | ------ | -------------------------------------------------------- |
+| userId | String | The unique, permanent user ID registered with the broker |
+| actId  | String |                                                          |
 
 __Response Structure__
 
@@ -135,7 +129,7 @@ __Response Structure__
             "exchange": "CDS",
             "segment": "cde_fo",
             "token": "11771",
-            "product": "M",
+            "product": "M",      
             "netQty": "-2",
             "netBuyQty": "0",
             "netBuyAvgPrice": "0.0",
@@ -187,7 +181,7 @@ __Parameters__
 |unrealizedpnl   |  String | The Number of shares got unfilled  |                                                                                         
 |multiplier      |  String | The Multiplier Of Scrip  |                                                                                     
 |lotSize         |  String   | Quantity of a single lot  |                                                                               
-|tickSize        |  String   | Ticker Size Of The Scrip (in paisa).Tick size is the minimum price change between different bid and offer prices of an asset traded on an exchange platform  |                                                                            
+|tickSize        |  String   | Ticker Size Of The Scrip (in paisa).Tick size is the minimum price change between different bid and offer prices of an asset traded on an exchange platform |                                                                            
 
 
 ## Convert Position
@@ -210,17 +204,17 @@ __Request Structure__
 __Parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|userId|	String|	|
-|actId| String| |
-|exchange| String|	 |
-|tradingSymbol| String|	 |
-|qty|	String|	|
-|product|	String|	|
-|prevProduct|	Int|	|
-|tranType| String|	 |
-|posType| String|	 |
+| Field         | Type   | Description |
+| ------------- | ------ | ----------- |
+| userId        | String |             |
+| actId         | String |             |
+| exchange      | String |             |
+| tradingSymbol | String |             |
+| qty           | String |             |
+| product       | String |             |
+| prevProduct   | Int    |             |
+| tranType      | String |             |
+| posType       | String |             |
 
 
 

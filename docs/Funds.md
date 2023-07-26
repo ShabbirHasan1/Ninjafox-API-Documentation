@@ -3,11 +3,16 @@ title: Funds
 ---
 
 
-## Funds Limits
-
-|Type	| API|Details	 |
+|Type	| Apis|Details	 |
 |-------|------|-------------|
 |POST	|funds/limits|	Place a new funds|
+ 
+
+## Get Limits
+
+
+Get all information of your trading account like balance, margin utilised, collateral, etc.
+
 
 
 __Request Structure__
@@ -15,7 +20,7 @@ __Request Structure__
 ```
 {
    "userId": "<USER_ID>",
-   "accountId": "<USER_AC>"
+   "accountId": "<USER_AC>",
 }
 ```
 __Input parameters__
@@ -23,7 +28,7 @@ __Input parameters__
 |Field	| Type	|Description|
 |-------|-------------------|-------------------------------|
 |userId	|String	|           |
-|accountId	|String	|            |
+|accountId	|String	|       |
 
 __Response Structure__
 ```
@@ -51,16 +56,16 @@ __Parameters__
 
 |Field	|Type	|Description|
 |-|-|-|
-|availableMargin	|Int	|Account Holder's Available Margin is dispalyed|
-|openingBalance	|Int	|Account Holder's Opening Balance is displayed|
-|marginUsed	|Int	|Account Holder's Margin Used is displayed|
-|payin	|Int	|Payin is the funds transferred by the customer from his bank account into his trading account|
-|stockPledge	|Int	||
-|holdingSellCredit	|Int	||
-|brokerage	|Int	||
-|exposure	|Int	|The exposure margin is charged over and above the SPAN margin, and is usually done so at the discretion of the broker|
-|span	|Int	|SPAN determines margin requirements based on a global assessment of the one-day risk for a trader's account|
-|premium	|Int	| |
+|availableMargin	|int	|Account Holder's Available Margin is dispalyed|
+|openingBalance	|int	|Account Holder's Opening Balance is displayed|
+|marginUsed	|int	|Account Holder's Margin Used is displayed|
+|payin	|int	|Payin is the funds transferred by the customer from his bank account into his trading account|
+|stockPledge	|int	||
+|holdingSellCredit	|int	||
+|brokerage	|int	||
+|exposure	|int	|The exposure margin is charged over and above the SPAN margin, and is usually done so at the discretion of the broker|
+|span	|int	|SPAN determines margin requirements based on a global assessment of the one-day risk for a trader's account|
+|premium	|int	||
 
 
 

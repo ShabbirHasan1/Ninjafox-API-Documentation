@@ -27,7 +27,8 @@ __Input parameters__
 
 |Field	| Type	|Description|
 |-------|-------------------|-------------------------------|
-|userId	|String	|   
+|userId	|String	|           |
+
 
 
 __Response Structure__
@@ -89,11 +90,11 @@ __Response Structure__
 __parameters__
 
 
-|Field	     |Type   	|description        |
-|------------|----------|------------------ |
+|Field	     |Type   	|description                         |
+|------------|----------|------------------                  |
 |chart	 |String       |The name of Chart platform           |
-|Poastatus	 |String	    |A power of attorney status  |
-|wstickyorder    |String	    |Mobile Sticky order flag       |
-|wTheme      |String    |Web theme Flag               |
-|wsingleDepth    	 |String	    |Web single depth flag  |
-|mwatch    	 |String	    |market watch flag          |
+|Poastatus	 |String	    |A power of attorney status      |
+|wstickyorder    |String	    |Mobile Sticky order flag    |
+|wTheme      |String    |Web theme Flag                      |
+|wsingleDepth    	 |String	    |Web single depth flag   |
+|mwatch    	 |String	    |market watch flag               |

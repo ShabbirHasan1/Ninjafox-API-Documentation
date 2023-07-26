@@ -4,15 +4,14 @@ title: Content 2
 
 ---
 
-
 ## F&O Content
 
-|Method	     |API   	|Detail        |
-|------------|----------|------------------ |
-| Post|/restpy/get_strike_data|Get Marketing Response to show in banner| 
-| GET|/indices    |Fetch Index Details|
-| GET|/futures    |Fetch 5 Future Details|
-| GET|/futuresall |Get Multiple Future Details with titles| 
+| Method | API                     | Detail                                   |
+| ------ | ----------------------- | ---------------------------------------- |
+| Post   | /restpy/get_strike_data | Get Marketing Response to show in banner |
+| GET    | /indices                | Fetch Index Details                      |
+| GET    | /futures                | Fetch 5 Future Details                   |
+| GET    | /futuresall             | Get Multiple Future Details with titles  |
 
 ### Option Chain
 
@@ -29,11 +28,11 @@ __Request Structure__
 
 __Input parameters__
 
-|Field	| Type	|Description|
-|-------|-------------------|-----------------------|
-|underlying	|String	| Script Name  |
-|expiry  	|String	|Expiry date (for derivatives)  |
-|interval  	|String	|The interval of strike price from the spot. |
+| Field      | Type   | Description                                 |
+| ---------- | ------ | ------------------------------------------- |
+| underlying | String | Script Name                                 |
+| expiry     | String | Expiry date (for derivatives)               |
+| interval   | String | The interval of strike price from the spot. |
 
 
 
@@ -88,15 +87,15 @@ __Response Structure__
 __Parameters__
 
 
-|Field	     |Type   	|description        |
-|------------|----------|------------------ |
-|ltp	 |String       |Last available NAV price of the fund       |
-|forInsName	 |String	    |Last trade price of the scrip. The price at which the final trade happens between a buyer and a seller |
-|gVal       |String	    | Graph Value          |
-|oi |String  |Open Interest |
-|pdoi    	 |String	    | Previous day Open Intrest         |
-|pdc   |String	    |Previce Day Close Value         |
-|token    	 |String	    |Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details          |
+| Field      | Type   | description                                                                                                                                                             |
+| ---------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ltp        | String | Last available NAV price of the fund                                                                                                                                    |
+| forInsName | String | Last trade price of the scrip. The price at which the final trade happens between a buyer and a seller                                                                  |
+| gVal       | String | Graph Value                                                                                                                                                             |
+| oi         | String | Open Interest                                                                                                                                                           |
+| pdoi       | String | Previous day Open Intrest                                                                                                                                               |
+| pdc        | String | Previce Day Close Value                                                                                                                                                 |
+| token      | String | Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details |
  
 ### FNO Screeners
 
@@ -113,9 +112,9 @@ __Request Structure__
 
 __Input parameters__
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|userId	|String	| The unique, permanent user ID registered with the broker|  
+| Field  | Type   | Description                                              |
+| ------ | ------ | -------------------------------------------------------- |
+| userId | String | The unique, permanent user ID registered with the broker |
 
 __Response Structure__
 
@@ -155,14 +154,14 @@ __Response Structure__
 
 __parameters__
 
-|Field	     |Type   	|description        |
-|------------|----------|------------------ |
-|scripName	 |String       |The Name of script        |
-|sortOrder	 |Int	      |order of script in list|
-|exchange    |String	    | Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)          |
-|nextExpiry  |String    | Next expiry of the script              |
-|token    	 |String	    | Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details         |
-|pdc         |String	    |Previce Day Close Value          |
+| Field      | Type   | description                                                                                                                                                             |
+| ---------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| scripName  | String | The Name of script                                                                                                                                                      |
+| sortOrder  | Int    | order of script in list                                                                                                                                                 |
+| exchange   | String | Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)                                                                                                                     |
+| nextExpiry | String | Next expiry of the script                                                                                                                                               |
+| token      | String | Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details |
+| pdc        | String | Previce Day Close Value                                                                                                                                                 |
 
 
 <!-- ## Indicesall
@@ -178,9 +177,9 @@ __Request Structure__
 
 __Input parameters__
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|userId	|String	|    -->
+| Field  | Type   | Description |
+| ------ | ------ | ----------- |
+| userId | String | -->         |
 
 
 ### Futures 
@@ -195,9 +194,9 @@ __Request Structure__
 
 __Input parameters__
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|userId	|String	| The unique, permanent user ID registered with the broker|  
+| Field  | Type   | Description                                              |
+| ------ | ------ | -------------------------------------------------------- |
+| userId | String | The unique, permanent user ID registered with the broker |
 
 __Response Structure__
 
@@ -235,14 +234,14 @@ __Response Structure__
 ```
 __parameters__
 
-|Field	     |Type   	|description        |
-|------------|----------|------------------ |
-|scripName	 |String       |The Name of script        |
-|sortOrder	 |Int	    |order of script in list  |
-|exchange    |String	    |Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)           |
-|expiry      |String    |Expiry date (for derivatives)               |
-|token    	 |String	    |Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details          |
-|pdc         |String	    |Previce Day Close Value          |
+| Field     | Type   | description                                                                                                                                                             |
+| --------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| scripName | String | The Name of script                                                                                                                                                      |
+| sortOrder | Int    | order of script in list                                                                                                                                                 |
+| exchange  | String | Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)                                                                                                                     |
+| expiry    | String | Expiry date (for derivatives)                                                                                                                                           |
+| token     | String | Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details |
+| pdc       | String | Previce Day Close Value                                                                                                                                                 |
 
 
 ### Detailed Future 
@@ -258,9 +257,9 @@ __Request Structure__
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|userId	|String	|The unique, permanent user ID registered with the broker|   
+| Field  | Type   | Description                                              |
+| ------ | ------ | -------------------------------------------------------- |
+| userId | String | The unique, permanent user ID registered with the broker |
 
 __Response Structure__
 
@@ -342,10 +341,10 @@ __parameters__
 
 ## Mobile DashBoard
 
-|Method	     |API   	|Detail        |
-|------------|----------|------------------ |
-| GET| dashboard/investment   |Get investing dashboard|
-| GET| dashboard/trading  |Get trading dashboard|
+| Method | API                  | Detail                  |
+| ------ | -------------------- | ----------------------- |
+| GET    | dashboard/investment | Get investing dashboard |
+| GET    | dashboard/trading    | Get trading dashboard   |
 
 
 ### Investing
@@ -409,12 +408,12 @@ __Response Structure__
 __parameters__
 
 
-|Field	     |Type   	|description        |
-|------------|----------|------------------ |
-|preferences  	 |String       |User Preference in boolean flag        |
-|indicesData   	 |List	    |List of Indices script data  |
-|topSectorData     |List	    |List of Top sector data           |
-|mcardData        |List    |List of  Card data               |
+| Field         | Type   | description                     |
+| ------------- | ------ | ------------------------------- |
+| preferences   | String | User Preference in boolean flag |
+| indicesData   | List   | List of Indices script data     |
+| topSectorData | List   | List of Top sector data         |
+| mcardData     | List   | List of  Card data              |
 
 
 ### Trading
@@ -452,12 +451,12 @@ __Response Structure__
 __parameters__
 
 
-|Field	     |Type   	|description        |
-|------------|----------|------------------ |
-|preferences  	 |String       |User Preference       |
-|futuresData   	 |String	    |Future Script Data  |
-|fnoScannersData      |String	    |Future and Option Scanner Data           |
-|heatMapData       |String    |Heat Map Data               |
+| Field           | Type   | description                    |
+| --------------- | ------ | ------------------------------ |
+| preferences     | String | User Preference                |
+| futuresData     | String | Future Script Data             |
+| fnoScannersData | String | Future and Option Scanner Data |
+| heatMapData     | String | Heat Map Data                  |
 
 ## Charts
 
@@ -470,9 +469,9 @@ __parameters__
 
 ## Marketing
 
-|Method	     |API   	|Detail        |
-|------------|----------|------------------ |
-| GET|/marketing  |Get Marketing Response to show in banner| 
+| Method | API        | Detail                                   |
+| ------ | ---------- | ---------------------------------------- |
+| GET    | /marketing | Get Marketing Response to show in banner |
 
 
 __Request Structure__ 
@@ -486,9 +485,9 @@ __Request Structure__
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|userId	|String	|  The unique, permanent user ID registered with the broker| 
+| Field  | Type   | Description                                              |
+| ------ | ------ | -------------------------------------------------------- |
+| userId | String | The unique, permanent user ID registered with the broker |
 
 __Response Structure__
 
@@ -538,17 +537,17 @@ __Response Structure__
 __parameters__
 
 
-|Field	     |Type   	|description        |
-|------------|----------|------------------ |
-|title	 |String       |Card Title         |
-|subTitle	 |String	    |Description of the title  |
-|imageUrl    |String	    |Image URL           |
-|cardValue      |String    |Card Value in percentage               |
-|buttonName    	 |String	    |Content of Button          |
-|buttonUrl         |String	    |Content of Button redirect URL          |
-|inApp      |String	    |App Flag for Web and Mobile view          |
-|cardColor      |String	    |Color code of the card          |
-|buttonColor      |String	    |Button Color code of the card          |
+| Field       | Type   | description                      |
+| ----------- | ------ | -------------------------------- |
+| title       | String | Card Title                       |
+| subTitle    | String | Description of the title         |
+| imageUrl    | String | Image URL                        |
+| cardValue   | String | Card Value in percentage         |
+| buttonName  | String | Content of Button                |
+| buttonUrl   | String | Content of Button redirect URL   |
+| inApp       | String | App Flag for Web and Mobile view |
+| cardColor   | String | Color code of the card           |
+| buttonColor | String | Button Color code of the card    |
 
 
 

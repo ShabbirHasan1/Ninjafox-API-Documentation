@@ -4,10 +4,10 @@ title: EKYC APIs
 
 ## Mobile Number 
 
-|Method	     |API   	|Detail        |
-|------------|----------|------------------ |
-| Post|user/sendSmsOtp  |Fetch Index Details|
-| Post|user/verifySmsOtp |Get Multiple Index Details with titles|
+| Method | API               | Detail                                 |
+| ------ | ----------------- | -------------------------------------- |
+| Post   | user/sendSmsOtp   | Fetch Index Details                    |
+| Post   | user/verifySmsOtp | Get Multiple Index Details with titles |
 
 ### Input Mobile
 
@@ -22,10 +22,9 @@ __Request Structure__
 
 __Input parameters__
 
-
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|mobileNo	|String	|Account holder Mobile number will be displayed|   
+| Field    | Type   | Description                                    |
+| -------- | ------ | ---------------------------------------------- |
+| mobileNo | String | Account holder Mobile number will be displayed |
 
 __Response Structure__
 
@@ -57,21 +56,21 @@ __Response Structure__
 __parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|id	|String	|Unique ID     |
-|userName	|String	|User's real name |
-|firstName	|String	|User's First name |
-|middleName	|String	|User's Middle name |
-|lastName	|String	|User's Last name |
-|mobileNo	|String	|Account holder Mobile number will be displayed |
-|emailId	|String	|Account holder Email ID will be displayed |
-|emailVerified	|String	|User's register email ID is verified |
-|smsVerified	|String	|Valid SMS verified |
-|panNumber	|String	|Account holder PAN number will be displayed |
-|dob	|String	|User's Date of Birth |
-|stage	|String	|Number of stage completed in Ekyc |
-|status	|String	|ACTIVE, PAUSED or CANCELLED |
+| Field         | Type   | Description                                    |
+| ------------- | ------ | ---------------------------------------------- |
+| id            | String | Unique ID                                      |
+| userName      | String | User's real name                               |
+| firstName     | String | User's First name                              |
+| middleName    | String | User's Middle name                             |
+| lastName      | String | User's Last name                               |
+| mobileNo      | String | Account holder Mobile number will be displayed |
+| emailId       | String | Account holder Email ID will be displayed      |
+| emailVerified | String | User's register email ID is verified           |
+| smsVerified   | String | Valid SMS verified                             |
+| panNumber     | String | Account holder PAN number will be displayed    |
+| dob           | String | User's Date of Birth                           |
+| stage         | String | Number of stage completed in Ekyc              |
+| status        | String | ACTIVE, PAUSED or CANCELLED                    |
 
 
 
@@ -83,17 +82,17 @@ __Request Structure__
 ```
 {
     "mobileNo":"<MOBILE_NUMBER>",
-     "smsOtp":"7765"
+    "smsOtp":"7765"
 }
 ```
 
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|mobileNo	|String	|Account holder Mobile number will be displayed   |
-|smsOtp	|String	| Mobile Sms OTP  |
+| Field    | Type   | Description                                    |
+| -------- | ------ | ---------------------------------------------- |
+| mobileNo | String | Account holder Mobile number will be displayed |
+| smsOtp   | String | Mobile Sms OTP                                 |
 
 
 __Response Structure__
@@ -125,28 +124,28 @@ __Response Structure__
 
 __parameters__
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|id	|String	|Unique ID     |
-|userName	|String	|User's real name |
-|firstName	|String	|User's First name |
-|middleName	|String	|User's Middle name |
-|lastName	|String	|User's Last name |
-|mobileNo	|String	|Account holder Mobile number will be displayed |
-|emailId	|String	|Account holder Email ID will be displayed |
-|emailVerified	|String	|User's register email ID is verified |
-|smsVerified	|String	|Valid SMS verified |
-|panNumber	|String	|Account holder PAN number will be displayed |
-|dob	|String	|User's Date of Birth |
-|stage	|String	|Number of stage completed in Ekyc |
-|status	|String	|ACTIVE, PAUSED or CANCELLED |
+| Field         | Type   | Description                                    |
+| ------------- | ------ | ---------------------------------------------- |
+| id            | String | Unique ID                                      |
+| userName      | String | User's real name                               |
+| firstName     | String | User's First name                              |
+| middleName    | String | User's Middle name                             |
+| lastName      | String | User's Last name                               |
+| mobileNo      | String | Account holder Mobile number will be displayed |
+| emailId       | String | Account holder Email ID will be displayed      |
+| emailVerified | String | User's register email ID is verified           |
+| smsVerified   | String | Valid SMS verified                             |
+| panNumber     | String | Account holder PAN number will be displayed    |
+| dob           | String | User's Date of Birth                           |
+| stage         | String | Number of stage completed in Ekyc              |
+| status        | String | ACTIVE, PAUSED or CANCELLED                    |
 
 ## Email ID
 
-|Method	     |API   	|Detail        |
-|------------|----------|------------------ |
-| Post|user/verifyEmailOtp  |Fetch Index Details|
-| Post|user/sendMailOtp |Get Multiple Index Details with titles|
+| Method | API                 | Detail                                 |
+| ------ | ------------------- | -------------------------------------- |
+| Post   | user/verifyEmailOtp | Fetch Index Details                    |
+| Post   | user/sendMailOtp    | Get Multiple Index Details with titles |
 
 ### Input Email
 
@@ -161,9 +160,9 @@ __Request Structure__
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|email	|String	|Account holder Email ID will be displayed   |
+| Field | Type   | Description                               |
+| ----- | ------ | ----------------------------------------- |
+| email | String | Account holder Email ID will be displayed |
 
 __Response Structure__
 
@@ -195,21 +194,21 @@ __Response Structure__
 __parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|id	|String	|Unique ID     |
-|userName	|String	|User's real name |
-|firstName	|String	|User's First name |
-|middleName	|String	|User's Middle name |
-|lastName	|String	|User's Last name |
-|mobileNo	|String	|Account holder Mobile number will be displayed |
-|emailId	|String	|Account holder Email ID will be displayed |
-|emailVerified	|String	|User's register email ID is verified |
-|smsVerified	|String	|Valid SMS verified |
-|panNumber	|String	|Account holder PAN number will be displayed |
-|dob	|String	|User's Date of Birth |
-|stage	|String	|Number of stage completed in Ekyc |
-|status	|String	|ACTIVE, PAUSED or CANCELLED |
+| Field         | Type   | Description                                    |
+| ------------- | ------ | ---------------------------------------------- |
+| id            | String | Unique ID                                      |
+| userName      | String | User's real name                               |
+| firstName     | String | User's First name                              |
+| middleName    | String | User's Middle name                             |
+| lastName      | String | User's Last name                               |
+| mobileNo      | String | Account holder Mobile number will be displayed |
+| emailId       | String | Account holder Email ID will be displayed      |
+| emailVerified | String | User's register email ID is verified           |
+| smsVerified   | String | Valid SMS verified                             |
+| panNumber     | String | Account holder PAN number will be displayed    |
+| dob           | String | User's Date of Birth                           |
+| stage         | String | Number of stage completed in Ekyc              |
+| status        | String | ACTIVE, PAUSED or CANCELLED                    |
 
 
 ### Verify Email
@@ -226,10 +225,10 @@ __Request Structure__
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|id	|String	|Unique ID   |
-|email	|String	|Account holder Email ID will be displayed   |
+| Field | Type   | Description                               |
+| ----- | ------ | ----------------------------------------- |
+| id    | String | Unique ID                                 |
+| email | String | Account holder Email ID will be displayed |
 
 
 __Response Structure__
@@ -262,28 +261,28 @@ __Response Structure__
 __parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|id	|String	|Unique ID     |
-|userName	|String	|User's real name |
-|firstName	|String	|User's First name |
-|middleName	|String	|User's Middle name |
-|lastName	|String	|User's Last name |
-|mobileNo	|String	|Account holder Mobile number will be displayed |
-|emailId	|String	|Account holder Email ID will be displayed |
-|emailVerified	|String	|User's register email ID is verified |
-|smsVerified	|String	|Valid SMS verified |
-|panNumber	|String	|Account holder PAN number will be displayed |
-|dob	|String	|User's Date of Birth |
-|stage	|String	|Number of stage completed in Ekyc |
-|status	|String	|ACTIVE, PAUSED or CANCELLED |
+| Field         | Type   | Description                                    |
+| ------------- | ------ | ---------------------------------------------- |
+| id            | String | Unique ID                                      |
+| userName      | String | User's real name                               |
+| firstName     | String | User's First name                              |
+| middleName    | String | User's Middle name                             |
+| lastName      | String | User's Last name                               |
+| mobileNo      | String | Account holder Mobile number will be displayed |
+| emailId       | String | Account holder Email ID will be displayed      |
+| emailVerified | String | User's register email ID is verified           |
+| smsVerified   | String | Valid SMS verified                             |
+| panNumber     | String | Account holder PAN number will be displayed    |
+| dob           | String | User's Date of Birth                           |
+| stage         | String | Number of stage completed in Ekyc              |
+| status        | String | ACTIVE, PAUSED or CANCELLED                    |
 
 ## PAN Card Validation 
 
-|Method	     |API   	|Detail        |
-|------------|----------|------------------ |
-| Post|pan/getPan  |Fetch Index Details|
-| Post|pan/saveDOB |Get Multiple Index Details with titles|
+| Method | API         | Detail                                 |
+| ------ | ----------- | -------------------------------------- |
+| Post   | pan/getPan  | Fetch Index Details                    |
+| Post   | pan/saveDOB | Get Multiple Index Details with titles |
 
 ### NSDL Validation
 
@@ -299,10 +298,10 @@ __Request Structure__
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|id	|String	| Unique ID|  
-|panNumber	|String	|Account holder PAN number will be displayed|   
+| Field     | Type   | Description                                 |
+| --------- | ------ | ------------------------------------------- |
+| id        | String | Unique ID                                   |
+| panNumber | String | Account holder PAN number will be displayed |
 
 
 __Response Structure__
@@ -336,21 +335,21 @@ __Response Structure__
 __parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|id	|String	|Unique ID     |
-|userName	|String	|User's real name |
-|firstName	|String	|User's First name |
-|middleName	|String	|User's Middle name |
-|lastName	|String	|User's Last name |
-|mobileNo	|String	|Account holder Mobile number will be displayed |
-|emailId	|String	|Account holder Email ID will be displayed |
-|emailVerified	|String	|User's register email ID is verified |
-|smsVerified	|String	|Valid SMS verified |
-|panNumber	|String	|Account holder PAN number will be displayed |
-|dob	|String	|User's Date of Birth |
-|stage	|String	|Number of stage completed in Ekyc |
-|status	|String	|ACTIVE, PAUSED or CANCELLED |
+| Field         | Type   | Description                                    |
+| ------------- | ------ | ---------------------------------------------- |
+| id            | String | Unique ID                                      |
+| userName      | String | User's real name                               |
+| firstName     | String | User's First name                              |
+| middleName    | String | User's Middle name                             |
+| lastName      | String | User's Last name                               |
+| mobileNo      | String | Account holder Mobile number will be displayed |
+| emailId       | String | Account holder Email ID will be displayed      |
+| emailVerified | String | User's register email ID is verified           |
+| smsVerified   | String | Valid SMS verified                             |
+| panNumber     | String | Account holder PAN number will be displayed    |
+| dob           | String | User's Date of Birth                           |
+| stage         | String | Number of stage completed in Ekyc              |
+| status        | String | ACTIVE, PAUSED or CANCELLED                    |
 
 ### KRA Check
  
@@ -366,10 +365,10 @@ __Request Structure__
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|id	|String	|   
-|dob	|String	|   
+| Field | Type   | Description |
+| ----- | ------ | ----------- |
+| id    | String |
+| dob   | String |
 
 
 
@@ -402,28 +401,28 @@ __Response Structure__
 
 __parameters__
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|id	|String	|Unique ID     |
-|userName	|String	|User's real name |
-|firstName	|String	|User's First name |
-|middleName	|String	|User's Middle name |
-|lastName	|String	|User's Last name |
-|mobileNo	|String	|Account holder Mobile number will be displayed |
-|emailId	|String	|Account holder Email ID will be displayed |
-|emailVerified	|String	|User's register email ID is verified |
-|smsVerified	|String	|Valid SMS verified |
-|panNumber	|String	|Account holder PAN number will be displayed |
-|dob	|String	|User's Date of Birth |
-|stage	|String	|Number of stage completed in Ekyc |
-|status	|String	|ACTIVE, PAUSED or CANCELLED |
+| Field         | Type   | Description                                    |
+| ------------- | ------ | ---------------------------------------------- |
+| id            | String | Unique ID                                      |
+| userName      | String | User's real name                               |
+| firstName     | String | User's First name                              |
+| middleName    | String | User's Middle name                             |
+| lastName      | String | User's Last name                               |
+| mobileNo      | String | Account holder Mobile number will be displayed |
+| emailId       | String | Account holder Email ID will be displayed      |
+| emailVerified | String | User's register email ID is verified           |
+| smsVerified   | String | Valid SMS verified                             |
+| panNumber     | String | Account holder PAN number will be displayed    |
+| dob           | String | User's Date of Birth                           |
+| stage         | String | Number of stage completed in Ekyc              |
+| status        | String | ACTIVE, PAUSED or CANCELLED                    |
 
 ## Profile 
 
-|Method	     |API   	|Detail        |
-|------------|----------|------------------ |
-| Post|profile/getProfile/?:applicationId |Fetch Index Details|
-| Post|profile/saveProfile |Get Multiple Index Details with titles|
+| Method | API                                | Detail                                 |
+| ------ | ---------------------------------- | -------------------------------------- |
+| Post   | profile/getProfile/?:applicationId | Fetch Index Details                    |
+| Post   | profile/saveProfile                | Get Multiple Index Details with titles |
 
 
 ###  Get profile 
@@ -437,9 +436,9 @@ applicationId=6
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|applicationId	|String	| Unique Application ID |  
+| Field         | Type   | Description           |
+| ------------- | ------ | --------------------- |
+| applicationId | String | Unique Application ID |
 
 __Response Structure__
 
@@ -471,21 +470,21 @@ __Response Structure__
 __parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|id	|String	|Unique ID     |
-|applicationId	|String	|Unique Application ID  |
-|fatherName	|String	|Account holder FatherName |
-|applicantName	|String	|User's Application Number |
-|motherName	|String	|User's Mother Name |
-|occupation	|String	|User's Occupation |
-|gender	|String	|User's gender is ( Male , Female , other) |
-|title	|String	| User's Title|
-|annualIncome	|String	|User's annual Income |
-|maritalStatus	|String	|User's Marital status ( Married or Unmarried) |
-|politicalExposure	|String	|politicalExposure User's or Relactive side |
-|tradingExperience	|String	|User's Trading Experience |
-|legalAction	|String	|User's Legal Action status |
+| Field             | Type   | Description                                   |
+| ----------------- | ------ | --------------------------------------------- |
+| id                | String | Unique ID                                     |
+| applicationId     | String | Unique Application ID                         |
+| fatherName        | String | Account holder FatherName                     |
+| applicantName     | String | User's Application Number                     |
+| motherName        | String | User's Mother Name                            |
+| occupation        | String | User's Occupation                             |
+| gender            | String | User's gender is ( Male , Female , other)     |
+| title             | String | User's Title                                  |
+| annualIncome      | String | User's annual Income                          |
+| maritalStatus     | String | User's Marital status ( Married or Unmarried) |
+| politicalExposure | String | politicalExposure User's or Relactive side    |
+| tradingExperience | String | User's Trading Experience                     |
+| legalAction       | String | User's Legal Action status                    |
 
 
 ### Save profile
@@ -511,18 +510,18 @@ __Request Structure__
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|applicationId	|String	|Unique Application ID  |
-|fatherName	|String	|Account holder FatherName |
-|motherName	|String	|User's Mother Name |
-|occupation	|String	|User's Occupation |
-|gender	|String	|User's gender is ( Male , Female , other) |
-|annualIncome	|String	|User's annual Income |
-|maritalStatus	|String	|User's Marital status ( Married or Unmarried) |
-|politicalExposure	|String	|politicalExposure User's or Relactive side |
-|tradingExperience	|String	|User's Trading Experience |
-|legalAction	|String	|User's Legal Action status |
+| Field             | Type   | Description                                   |
+| ----------------- | ------ | --------------------------------------------- |
+| applicationId     | String | Unique Application ID                         |
+| fatherName        | String | Account holder FatherName                     |
+| motherName        | String | User's Mother Name                            |
+| occupation        | String | User's Occupation                             |
+| gender            | String | User's gender is ( Male , Female , other)     |
+| annualIncome      | String | User's annual Income                          |
+| maritalStatus     | String | User's Marital status ( Married or Unmarried) |
+| politicalExposure | String | politicalExposure User's or Relactive side    |
+| tradingExperience | String | User's Trading Experience                     |
+| legalAction       | String | User's Legal Action status                    |
 
 
 __Response Structure__
@@ -555,28 +554,28 @@ __Response Structure__
 __parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|id	|String	| Unique ID    |
-|applicationId	|String	|User's Application ID |
-|fatherName	|String	|User's father name |
-|applicantName	|String	|Applicatnt real Name |
-|motherName	|String	|User's Mother Name |
-|occupation	|String	|User's Occupation |
-|gender	|String	|User's gender is ( Male , Female , other) |
-|title	|String	| |
-|annualIncome	|String	|User's annual Income |
-|maritalStatus	|String	|User's Marital status ( Married or Unmarried) |
-|politicalExposure	|String	|politicalExposure User's or Relactive side |
-|tradingExperience	|String	|User's Trading Experience |
-|legalAction	|String	|User's Legal Action status |
+| Field             | Type   | Description                                   |
+| ----------------- | ------ | --------------------------------------------- |
+| id                | String | Unique ID                                     |
+| applicationId     | String | User's Application ID                         |
+| fatherName        | String | User's father name                            |
+| applicantName     | String | Applicatnt real Name                          |
+| motherName        | String | User's Mother Name                            |
+| occupation        | String | User's Occupation                             |
+| gender            | String | User's gender is ( Male , Female , other)     |
+| title             | String |                                               |
+| annualIncome      | String | User's annual Income                          |
+| maritalStatus     | String | User's Marital status ( Married or Unmarried) |
+| politicalExposure | String | politicalExposure User's or Relactive side    |
+| tradingExperience | String | User's Trading Experience                     |
+| legalAction       | String | User's Legal Action status                    |
 
 
 ## Get UserDetails
 
-|Method	     |API   	|Detail        |
-|------------|----------|------------------ |
-| Post|user/getUsrDetails/?:applicationId  |Fetch Index Details|
+| Method | API                                | Detail              |
+| ------ | ---------------------------------- | ------------------- |
+| Post   | user/getUsrDetails/?:applicationId | Fetch Index Details |
 
 
 __Request Structure__ 
@@ -589,9 +588,9 @@ applicationId
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|applicationId	|String	| Unique Application ID |  
+| Field         | Type   | Description           |
+| ------------- | ------ | --------------------- |
+| applicationId | String | Unique Application ID |
 
 __Response Structure__
 
@@ -652,61 +651,61 @@ __parameters__
 
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|id	|String	|Unique ID     |
-|userName	|String	|User's real name |
-|firstName	|String	|User's First name |
-|middleName	|String	|User's Middle name |
-|lastName	|String	|User's Last name |
-|mobileNo	|String	|Account holder Mobile number will be displayed |
-|emailId	|String	|Account holder Email ID will be displayed |
-|emailVerified	|String	|User's register email ID is verified |
-|smsVerified	|String	|Valid SMS verified |
-|panNumber	|String	|Account holder PAN number will be displayed |
-|dob	|String	|User's Date of Birth |
-|stage	|String	|Number of stage completed in Ekyc |
-|status	|String	|ACTIVE, PAUSED or CANCELLED |
-|id	|String	| Unique ID    |
-|isdigi	|String	|User's Digi Locker Flag |
-|accessToken	|String	|User's access token |
-|co	|String	| Care of Address|
-|applicationId	|Int	|User's Application ID |
-|flatNo	|String	|Flat or House Number |
-|address1	|String	| User's Address|
-|address2	|String	|User's Address |
-|landmark	|String	|User's Address landmark |
-|street	|String	| User's Street Address|
-|district	|String	|User's District |
-|stage	|String	|Number of stage completed in Ekyc |
-|country	|String	|User's Country |
-|pincode	|String	|User's pincode |
-|isKra	|String	|User's KRA Flag |
-|stage	|String	| Number of stage completed in Ekyc|
-|status	|String	| ACTIVE, PAUSED or CANCELLED|
-|id	|String	|   Unique ID  |
-|isdigi	|String	| |
-|kraAddress1	|String	|User's KRA Register Address 1 |
-|kraAddress2	|String	|User's KRA Register Address 2 |
-|kraAddress3	|String	|User's KRA Register Address 3 |
-|kraPin	|String	|User's Personal Identification number in KRA |
-|kraCity	|String	|City Name In KRA |
-|kraState	|String	|State Name in KRA |
-|kraPerAddress1	|String	|User's KRA Register Address 1 |
-|kraPerAddress2	|String	|User's KRA Register Address 2 |
-|kraPerAddress3	|String	|User's KRA Register Address 3 |
-|kraPerPin	|String	|User's Personal Identification number in KRA |
-|kraPerCity	|String	|City Name In KRA |
-|kraPerState	|String	|State Name in KRA |
+| Field          | Type   | Description                                    |
+| -------------- | ------ | ---------------------------------------------- |
+| id             | String | Unique ID                                      |
+| userName       | String | User's real name                               |
+| firstName      | String | User's First name                              |
+| middleName     | String | User's Middle name                             |
+| lastName       | String | User's Last name                               |
+| mobileNo       | String | Account holder Mobile number will be displayed |
+| emailId        | String | Account holder Email ID will be displayed      |
+| emailVerified  | String | User's register email ID is verified           |
+| smsVerified    | String | Valid SMS verified                             |
+| panNumber      | String | Account holder PAN number will be displayed    |
+| dob            | String | User's Date of Birth                           |
+| stage          | String | Number of stage completed in Ekyc              |
+| status         | String | ACTIVE, PAUSED or CANCELLED                    |
+| id             | String | Unique ID                                      |
+| isdigi         | String | User's Digi Locker Flag                        |
+| accessToken    | String | User's access token                            |
+| co             | String | Care of Address                                |
+| applicationId  | Int    | User's Application ID                          |
+| flatNo         | String | Flat or House Number                           |
+| address1       | String | User's Address                                 |
+| address2       | String | User's Address                                 |
+| landmark       | String | User's Address landmark                        |
+| street         | String | User's Street Address                          |
+| district       | String | User's District                                |
+| stage          | String | Number of stage completed in Ekyc              |
+| country        | String | User's Country                                 |
+| pincode        | String | User's pincode                                 |
+| isKra          | String | User's KRA Flag                                |
+| stage          | String | Number of stage completed in Ekyc              |
+| status         | String | ACTIVE, PAUSED or CANCELLED                    |
+| id             | String | Unique ID                                      |
+| isdigi         | String |                                                |
+| kraAddress1    | String | User's KRA Register Address 1                  |
+| kraAddress2    | String | User's KRA Register Address 2                  |
+| kraAddress3    | String | User's KRA Register Address 3                  |
+| kraPin         | String | User's Personal Identification number in KRA   |
+| kraCity        | String | City Name In KRA                               |
+| kraState       | String | State Name in KRA                              |
+| kraPerAddress1 | String | User's KRA Register Address 1                  |
+| kraPerAddress2 | String | User's KRA Register Address 2                  |
+| kraPerAddress3 | String | User's KRA Register Address 3                  |
+| kraPerPin      | String | User's Personal Identification number in KRA   |
+| kraPerCity     | String | City Name In KRA                               |
+| kraPerState    | String | State Name in KRA                              |
 
 
 ## Bank Details
 
-|Method	     |API   	|Detail        |
-|------------|----------|------------------ |
-| Post|bank/getBank/?:applicationId|Fetch Index Details|
-| Post|bank/getBankAdd|Get Multiple Index Details with titles|
-| Post|bank/saveBank |Fetch Index Details|
+| Method | API                          | Detail                                 |
+| ------ | ---------------------------- | -------------------------------------- |
+| Post   | bank/getBank/?:applicationId | Fetch Index Details                    |
+| Post   | bank/getBankAdd              | Get Multiple Index Details with titles |
+| Post   | bank/saveBank                | Fetch Index Details                    |
 
 
 
@@ -722,9 +721,9 @@ applicationId
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|applicationId	|String	|   
+| Field         | Type   | Description |
+| ------------- | ------ | ----------- |
+| applicationId | String |
 
 __Response Structure__
 
@@ -751,16 +750,16 @@ __Response Structure__
 __parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|id	|String	| Unique ID    |
-|applicationId	|String	|Unique Application ID  |
-|micr	|String	|Account Holder's Unique Number of MICR |
-|address	|String	|Account Holder's Bank Address |
-|branchName	|String	|Account Holder's Branch Name |
-|pincode	|String	|Account Holder's Unique PIN code |
-|ifsc	|String	|Account Holder's unique IFSC Code |
-|accountNo	|String	|User's Account Number will be dispalyed |
+| Field         | Type   | Description                             |
+| ------------- | ------ | --------------------------------------- |
+| id            | String | Unique ID                               |
+| applicationId | String | Unique Application ID                   |
+| micr          | String | Account Holder's Unique Number of MICR  |
+| address       | String | Account Holder's Bank Address           |
+| branchName    | String | Account Holder's Branch Name            |
+| pincode       | String | Account Holder's Unique PIN code        |
+| ifsc          | String | Account Holder's unique IFSC Code       |
+| accountNo     | String | User's Account Number will be dispalyed |
 
 
 ### Get branch details
@@ -775,9 +774,9 @@ ifsc=IDFB0080138
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|ifsc	|String	| Account Holder's unique IFSC Code|  
+| Field | Type   | Description                       |
+| ----- | ------ | --------------------------------- |
+| ifsc  | String | Account Holder's unique IFSC Code |
 
 __Response Structure__
 
@@ -813,24 +812,24 @@ __Response Structure__
 __parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|BRANCH	|String	|User's Branch     |
-|NEFT	|String	| |
-|CITY	|String	|User's City Name  |
-|MICR	|String	|User's Unique MICR  number |
-|UPI	|String	|User's Unified Payments Interface |
-|STATE	|String	|User's State Name |
-|ISO3166	|String	| |
-|CONTACT	|String	| |
-|RTGS	|String	| |
-|DISTRICT	|String	| |
-|ADDRESS	|String	| |
-|IMPS	|String	| |
-|CENTRE	|String	| |
-|BANK	|String	| |
-|BANKCODE	|String	| |
-|IFSC	|String	| |
+| Field    | Type   | Description                       |
+| -------- | ------ | --------------------------------- |
+| BRANCH   | String | User's Branch                     |
+| NEFT     | String |                                   |
+| CITY     | String | User's City Name                  |
+| MICR     | String | User's Unique MICR  number        |
+| UPI      | String | User's Unified Payments Interface |
+| STATE    | String | User's State Name                 |
+| ISO3166  | String |                                   |
+| CONTACT  | String |                                   |
+| RTGS     | String |                                   |
+| DISTRICT | String |                                   |
+| ADDRESS  | String |                                   |
+| IMPS     | String |                                   |
+| CENTRE   | String |                                   |
+| BANK     | String |                                   |
+| BANKCODE | String |                                   |
+| IFSC     | String |                                   |
 
 
 
@@ -851,13 +850,13 @@ __Request Structure__
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|applicationId	|String	|Unique Application ID  |
-|micr	|String	|Account Holder's Unique Number of MICR |
-|address	|String	|Account Holder's Bank Address |
-|ifsc	|String	|Account Holder's unique IFSC Code |
-|accountNo	|String	|User's Account Number will be dispalyed |
+| Field         | Type   | Description                             |
+| ------------- | ------ | --------------------------------------- |
+| applicationId | String | Unique Application ID                   |
+| micr          | String | Account Holder's Unique Number of MICR  |
+| address       | String | Account Holder's Bank Address           |
+| ifsc          | String | Account Holder's unique IFSC Code       |
+| accountNo     | String | User's Account Number will be dispalyed |
 
 
 __Response Structure__
@@ -886,24 +885,24 @@ __Response Structure__
 __parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|id	|String	| Unique ID    |
-|applicationId	|String	|Unique Application ID  |
-|micr	|String	|Account Holder's Unique Number of MICR |
-|address	|String	|Account Holder's Bank Address |
-|branchName	|String	|Account Holder's Branch Name |
-|pincode	|String	|Account Holder's Unique PIN code |
-|ifsc	|String	|Account Holder's unique IFSC Code |
-|accountNo	|String	|User's Account Number will be dispalyed |
+| Field         | Type   | Description                             |
+| ------------- | ------ | --------------------------------------- |
+| id            | String | Unique ID                               |
+| applicationId | String | Unique Application ID                   |
+| micr          | String | Account Holder's Unique Number of MICR  |
+| address       | String | Account Holder's Bank Address           |
+| branchName    | String | Account Holder's Branch Name            |
+| pincode       | String | Account Holder's Unique PIN code        |
+| ifsc          | String | Account Holder's unique IFSC Code       |
+| accountNo     | String | User's Account Number will be dispalyed |
 
 
 ## Segment Selection
 
-|Method	     |API   	|Detail        |
-|------------|----------|------------------ |
-| Post|segment/getSegment/?:applicationId  |Fetch Index Details|
-| Post|segment/saveSegment |Get Multiple Index Details with titles|
+| Method | API                                | Detail                                 |
+| ------ | ---------------------------------- | -------------------------------------- |
+| Post   | segment/getSegment/?:applicationId | Fetch Index Details                    |
+| Post   | segment/saveSegment                | Get Multiple Index Details with titles |
 
 
 ### Get segment
@@ -918,9 +917,9 @@ applicationId
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|applicationId	|String	| |String	|Unique Application ID|  
+| Field         | Type   | Description |
+| ------------- | ------ | ----------- |
+| applicationId | String |             | String | Unique Application ID |
 
 __Response Structure__
 
@@ -965,33 +964,33 @@ __Response Structure__
 __parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|id	|String	|     |
-|applicationId	|String	| |
-|equity	|String	| |
-|derivatives	|String	| |
-|aluminium	|String	| |
-|brass	|String	| |
-|cardamom	|String	| |
-|copper	|String	| |
-|cotton	|String	| |
-|crupalmoil	|String	| |
-|crudeoil	|String	| |
-|gold	|String	| |
-|menthaoil	|String	| |
-|naturalgas	|String	|     |
-|nickel	|String	| |
-|pepper	|String	| |
-|rbdpmolein	|String	| |
-|silver	|String	| |
-|zinc	|String	| |
-|kapas	|String	| |
-|rubber	|String	| |
-|mcxbulldex	|String	| |
-|mcxmetldex	|String	| |
-|mcxcomdex	|String	| |
-|lead	|String	| |
+| Field         | Type   | Description |
+| ------------- | ------ | ----------- |
+| id            | String |             |
+| applicationId | String |             |
+| equity        | String |             |
+| derivatives   | String |             |
+| aluminium     | String |             |
+| brass         | String |             |
+| cardamom      | String |             |
+| copper        | String |             |
+| cotton        | String |             |
+| crupalmoil    | String |             |
+| crudeoil      | String |             |
+| gold          | String |             |
+| menthaoil     | String |             |
+| naturalgas    | String |             |
+| nickel        | String |             |
+| pepper        | String |             |
+| rbdpmolein    | String |             |
+| silver        | String |             |
+| zinc          | String |             |
+| kapas         | String |             |
+| rubber        | String |             |
+| mcxbulldex    | String |             |
+| mcxmetldex    | String |             |
+| mcxcomdex     | String |             |
+| lead          | String |             |
 
 ### Save Segment
 
@@ -1030,33 +1029,33 @@ __Request Structure__
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|applicationId	|String	|     |
-|allSegment	|String	| |
-|equity	|String	| |
-|derivatives	|String	| |
-|aluminium	|String	| |
-|brass	|String	| |
-|cardamom	|String	| |
-|copper	|String	| |
-|cotton	|String	| |
-|crupalmoil	|String	| |
-|crudeoil	|String	| |
-|gold	|String	| |
-|menthaoil	|String	| |
-|naturalgas	|String	|     |
-|nickel	|String	| |
-|pepper	|String	| |
-|rbdpmolein	|String	| |
-|silver	|String	| |
-|zinc	|String	| |
-|kapas	|String	| |
-|rubber	|String	| |
-|mcxbulldex	|String	| |
-|mcxmetldex	|String	| |
-|mcxcomdex	|String	| |
-|lead	|String	| | 
+| Field         | Type   | Description |
+| ------------- | ------ | ----------- |
+| applicationId | String |             |
+| allSegment    | String |             |
+| equity        | String |             |
+| derivatives   | String |             |
+| aluminium     | String |             |
+| brass         | String |             |
+| cardamom      | String |             |
+| copper        | String |             |
+| cotton        | String |             |
+| crupalmoil    | String |             |
+| crudeoil      | String |             |
+| gold          | String |             |
+| menthaoil     | String |             |
+| naturalgas    | String |             |
+| nickel        | String |             |
+| pepper        | String |             |
+| rbdpmolein    | String |             |
+| silver        | String |             |
+| zinc          | String |             |
+| kapas         | String |             |
+| rubber        | String |             |
+| mcxbulldex    | String |             |
+| mcxmetldex    | String |             |
+| mcxcomdex     | String |             |
+| lead          | String |             |
 
 __Response Structure__
 
@@ -1102,41 +1101,41 @@ __Response Structure__
 __parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|id	|String	|     |
-|applicationId	|String	| |
-|allSegment	|String	| |
-|equity	|String	| |
-|derivatives	|String	| |
-|aluminium	|String	| |
-|brass	|String	| |
-|cardamom	|String	| |
-|copper	|String	| |
-|cotton	|String	| |
-|crupalmoil	|String	| |
-|crudeoil	|String	| |
-|gold	|String	| |
-|menthaoil	|String	| |
-|naturalgas	|String	|     |
-|nickel	|String	| |
-|pepper	|String	| |
-|rbdpmolein	|String	| |
-|silver	|String	| |
-|zinc	|String	| |
-|kapas	|String	| |
-|rubber	|String	| |
-|mcxbulldex	|String	| |
-|mcxmetldex	|String	| |
-|mcxcomdex	|String	| |
-|lead	|String	| |
+| Field         | Type   | Description |
+| ------------- | ------ | ----------- |
+| id            | String |             |
+| applicationId | String |             |
+| allSegment    | String |             |
+| equity        | String |             |
+| derivatives   | String |             |
+| aluminium     | String |             |
+| brass         | String |             |
+| cardamom      | String |             |
+| copper        | String |             |
+| cotton        | String |             |
+| crupalmoil    | String |             |
+| crudeoil      | String |             |
+| gold          | String |             |
+| menthaoil     | String |             |
+| naturalgas    | String |             |
+| nickel        | String |             |
+| pepper        | String |             |
+| rbdpmolein    | String |             |
+| silver        | String |             |
+| zinc          | String |             |
+| kapas         | String |             |
+| rubber        | String |             |
+| mcxbulldex    | String |             |
+| mcxmetldex    | String |             |
+| mcxcomdex     | String |             |
+| lead          | String |             |
 
 ## Nominee
 
-|Method	     |API   	|Detail        |
-|------------|----------|------------------ |
-| Post|nominee/getNominee/?:applicationId  |Fetch Index Details|
-| Post|nominee/saveNominee |Get Multiple Index Details with titles|
+| Method | API                                | Detail                                 |
+| ------ | ---------------------------------- | -------------------------------------- |
+| Post   | nominee/getNominee/?:applicationId | Fetch Index Details                    |
+| Post   | nominee/saveNominee                | Get Multiple Index Details with titles |
 
 
 ### Get Nominee
@@ -1151,9 +1150,9 @@ applicationId=6
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|applicationId	|String	|   
+| Field         | Type   | Description |
+| ------------- | ------ | ----------- |
+| applicationId | String |
 
 __Response Structure__
 
@@ -1173,7 +1172,7 @@ __Response Structure__
          "relationship":"Father",
          "dateOfbirth":"20-06-1976",
          "pancard":"",
-         "mobilenumber":9832423413,
+         "mobilenumber":<MOB_NUM>,
          "emailaddress":null,
          "address1":"Mulanur",
          "address2":"",
@@ -1194,28 +1193,28 @@ __Response Structure__
 __parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|id	|String	|     |
-|applicationId	|String	| |
-|nomineeId	|String	| |
-|firstName	|String	| |
-|lastName	|String	| |
-|relationship	|String	| |
-|dateOfbirth	|String	| |
-|pancard	|String	| |
-|mobilenumber	|String	| |
-|emailaddress	|String	| |
-|address1	|String	| |
-|address2	|String	| |
-|pincode	|String	| |
-|state	|String	| |
-|attachementUrl	|String	| |
-|allocation	|String	| |
-|guardianEntity	|String	| |
-|nomOneAllocation	|String	| |
-|nomTwoAllocation	|String	| |
-|nomThreeAllocation	|String	| |
+| Field              | Type   | Description |
+| ------------------ | ------ | ----------- |
+| id                 | String |             |
+| applicationId      | String |             |
+| nomineeId          | String |             |
+| firstName          | String |             |
+| lastName           | String |             |
+| relationship       | String |             |
+| dateOfbirth        | String |             |
+| pancard            | String |             |
+| mobilenumber       | String |             |
+| emailaddress       | String |             |
+| address1           | String |             |
+| address2           | String |             |
+| pincode            | String |             |
+| state              | String |             |
+| attachementUrl     | String |             |
+| allocation         | String |             |
+| guardianEntity     | String |             |
+| nomOneAllocation   | String |             |
+| nomTwoAllocation   | String |             |
+| nomThreeAllocation | String |             |
 
 ### Save Nominee
 
@@ -1231,7 +1230,7 @@ nomineeDetails: {
     "relationship": "Father",
     "dateOfbirth": "20-06-1976",
     "pancard": "",
-    "mobilenumber": 9832423413,
+    "mobilenumber": <MOB_NUM>,
     "address1": "Mulanur",
     "address2": "",
     "pincode": 638106,
@@ -1246,22 +1245,22 @@ nomineeDetails: {
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|applicationId	|String	|     |
-|firstname	|String	| |
-|lastname	|String	| |
-|relationship	|String	| |
-|dateOfbirth	|String	| |
-|pancard	|String	| |
-|mobilenumber	|String	| |
-|address1	|String	| |
-|address2	|String	| |
-|pincode	|String	| |
-|state	|String	| |
-|nomOneAllocation	|String	| |
-|nomTwoAllocation	|String	| |
-|nomThreeAllocation	|String	|     |
+| Field              | Type   | Description |
+| ------------------ | ------ | ----------- |
+| applicationId      | String |             |
+| firstname          | String |             |
+| lastname           | String |             |
+| relationship       | String |             |
+| dateOfbirth        | String |             |
+| pancard            | String |             |
+| mobilenumber       | String |             |
+| address1           | String |             |
+| address2           | String |             |
+| pincode            | String |             |
+| state              | String |             |
+| nomOneAllocation   | String |             |
+| nomTwoAllocation   | String |             |
+| nomThreeAllocation | String |             |
 
 
 __Response Structure__
@@ -1286,7 +1285,7 @@ __Response Structure__
          "relationship":"Father",
          "dateOfbirth":"20-06-1976",
          "pancard":"",
-         "mobilenumber":9832423413,
+         "mobilenumber":<MOB_NUM>,
          "emailaddress":null,
          "address1":"Mulanur",
          "address2":"",
@@ -1309,36 +1308,36 @@ __Response Structure__
 __parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|id	|String	|     |
-|applicationId	|String	| |
-|nomineeId	|String	| |
-|firstName	|String	| |
-|lastName	|String	| |
-|relationship	|String	| |
-|dateOfbirth	|String	| |
-|pancard	|String	| |
-|mobilenumber	|String	| |
-|emailaddress	|String	| |
-|address1	|String	| |
-|address2	|String	| |
-|pincode	|String	| |
-|state	|String	| |
-|attachementUrl	|String	| |
-|allocation	|String	| |
-|guardianEntity	|String	| |
-|nomOneAllocation	|String	| |
-|nomTwoAllocation	|String	| |
-|nomThreeAllocation	|String	| |
+| Field              | Type   | Description |
+| ------------------ | ------ | ----------- |
+| id                 | String |             |
+| applicationId      | String |             |
+| nomineeId          | String |             |
+| firstName          | String |             |
+| lastName           | String |             |
+| relationship       | String |             |
+| dateOfbirth        | String |             |
+| pancard            | String |             |
+| mobilenumber       | String |             |
+| emailaddress       | String |             |
+| address1           | String |             |
+| address2           | String |             |
+| pincode            | String |             |
+| state              | String |             |
+| attachementUrl     | String |             |
+| allocation         | String |             |
+| guardianEntity     | String |             |
+| nomOneAllocation   | String |             |
+| nomTwoAllocation   | String |             |
+| nomThreeAllocation | String |             |
 
 ## Payment
 
-|Method	     |API   	|Detail        |
-|------------|----------|------------------ |
-| Post|bank/createPayment  |Fetch Index Details|
-| Post|bank/checkPayment/?:applicationId|Get Multiple Index Details with titles|
-| Post|bank/verifyPayment  |Fetch Index Details|
+| Method | API                               | Detail                                 |
+| ------ | --------------------------------- | -------------------------------------- |
+| Post   | bank/createPayment                | Fetch Index Details                    |
+| Post   | bank/checkPayment/?:applicationId | Get Multiple Index Details with titles |
+| Post   | bank/verifyPayment                | Fetch Index Details                    |
 
 
 
@@ -1356,10 +1355,10 @@ __Request Structure__
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|applicationId	|String	|   
-|amount	|String	|   
+| Field         | Type   | Description |
+| ------------- | ------ | ----------- |
+| applicationId | String |
+| amount        | String |
 
 
 __Response Structure__
@@ -1369,21 +1368,21 @@ No body
 
 
 
-<!-- |Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|id	|String	|     |
-|userName	|String	| |
-|firstName	|String	| |
-|middleName	|String	| |
-|lastName	|String	| |
-|mobileNo	|String	| |
-|emailId	|String	| |
-|emailVerified	|String	| |
-|smsVerified	|String	| |
-|panNumber	|String	| |
-|dob	|String	| |
-|stage	|String	| |
-|status	|String	| | -->
+| <!--          | Field  | Type | Description |
+| ------------- | ------ | ---- |
+| id            | String |      |
+| userName      | String |      |
+| firstName     | String |      |
+| middleName    | String |      |
+| lastName      | String |      |
+| mobileNo      | String |      |
+| emailId       | String |      |
+| emailVerified | String |      |
+| smsVerified   | String |      |
+| panNumber     | String |      |
+| dob           | String |      |
+| stage         | String |      |
+| status        | String |      | -->         |
 
 ### Check Payment
 
@@ -1396,9 +1395,9 @@ applicationId=1
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|applicationId	|String	|   
+| Field         | Type   | Description |
+| ------------- | ------ | ----------- |
+| applicationId | String |
 
 __Response Structure__
 
@@ -1407,21 +1406,21 @@ NO body
 <!-- __parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|id	|String	|     |
-|userName	|String	| |
-|firstName	|String	| |
-|middleName	|String	| |
-|lastName	|String	| |
-|mobileNo	|String	| |
-|emailId	|String	| |
-|emailVerified	|String	| |
-|smsVerified	|String	| |
-|panNumber	|String	| |
-|dob	|String	| |
-|stage	|String	| |
-|status	|String	| | -->
+| Field         | Type   | Description |
+| ------------- | ------ | ----------- |
+| id            | String |             |
+| userName      | String |             |
+| firstName     | String |             |
+| middleName    | String |             |
+| lastName      | String |             |
+| mobileNo      | String |             |
+| emailId       | String |             |
+| emailVerified | String |             |
+| smsVerified   | String |             |
+| panNumber     | String |             |
+| dob           | String |             |
+| stage         | String |             |
+| status        | String |             | --> |
 
 ### verify Payment
 
@@ -1441,13 +1440,13 @@ __Request Structure__
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|razorpayOrderId	|String	|  |
-|razorpayPaymentId	|String	|  |
-|razorpaySignature	|String	|  |
-|receipt	|String	|  |
-|amount	|Int	|  |
+| Field             | Type   | Description |
+| ----------------- | ------ | ----------- |
+| razorpayOrderId   | String |             |
+| razorpayPaymentId | String |             |
+| razorpaySignature | String |             |
+| receipt           | String |             |
+| amount            | Int    |             |
 
 
 
@@ -1460,9 +1459,9 @@ NO body
 
 ## Document Upload
 
-|Method	     |API   	|Detail        |
-|------------|----------|------------------ |
-| Post|doc/upload/  |Fetch Index Details|
+| Method | API         | Detail              |
+| ------ | ----------- | ------------------- |
+| Post   | doc/upload/ | Fetch Index Details |
 
 
 ### Save document 
@@ -1482,12 +1481,12 @@ file: (binary)
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|applicationId	|String	|   |
-|typeOfProof	|String	|   
-|password	|String	|   
-|file	|String	|   
+| Field         | Type   | Description |
+| ------------- | ------ | ----------- |
+| applicationId | String |             |
+| typeOfProof   | String |             | 
+| password      | String |             |
+| file          | String |             |
 
 
 __Response Structure__
@@ -1515,16 +1514,16 @@ __Response Structure__
 __parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|id	|String	|     |
-|applicationId	|String	| |
-|attachement	|String	| |
-|attachementUrl	|String	| |
-|typeOfProof	|String	| |
-|password	|String	| |
-|latitude	|String	| |
-|longitude	|String	| |
+| Field          | Type   | Description |
+| -------------- | ------ | ----------- |
+| id             | String |             |
+| applicationId  | String |             |
+| attachement    | String |             |
+| attachementUrl | String |             |
+| typeOfProof    | String |             |
+| password       | String |             |
+| latitude       | String |             |
+| longitude      | String |             |
 
 
 

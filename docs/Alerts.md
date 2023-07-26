@@ -2,16 +2,16 @@
 title: Alerts
 ---
 
-|Type	| API|Details	 |
-|-------|------|-------------|
-|POST	|alerts/set  | Set alerts Request|
-|POST	|alerts/get|	Get  pending alerts|
-|POST	|alerts/modify|	 Modify alerts|
-|POST	|broker/getbrokermsg|	Get broker message|
-|POST	|alerts/cancel|Cancel alerts|
-|POST	| exch/exchstatus |	Exchange status|
-|POST	| exch/exchmsg  |	Exchange message|
-|POST	| alerts/get/criteria |	 Get criteria for drop down|
+| Type | API                 | Details                    |
+| ---- | ------------------- | -------------------------- |
+| POST | alerts/set          | Set alerts Request         |
+| POST | alerts/get          | Get  pending alerts        |
+| POST | alerts/modify       | Modify alerts              |
+| POST | broker/getbrokermsg | Get broker message         |
+| POST | alerts/cancel       | Cancel alerts              |
+| POST | exch/exchstatus     | Exchange status            |
+| POST | exch/exchmsg        | Exchange message           |
+| POST | alerts/get/criteria | Get criteria for drop down |
 
 ### Set Alerts
 
@@ -35,21 +35,21 @@ __Request Structure__
 ```
 __Input parameters__
 
-|Field	|           Type	|                    Description|
-|-------|-------------------|-------------------------------|
-|userId|          String          |                        |      
-|tradingSymbol | String|           |
-|exchange | String|                 |
-|alertCriteria | String|        |
-|alertVersus| String | |
-condition | String||
-|alertType | String||
-|validity  | String||
-|data  | String||
-|remarks | String||
-|smsFlag | String||
-|mailFlag  | String||
-|pushFlag | String ||                            
+| Field         | Type   | Description |
+| ------------- | ------ | ----------- |
+| userId        | String |             |
+| tradingSymbol | String |             |
+| exchange      | String |             |
+| alertCriteria | String |             |
+| alertVersus   | String |             |
+| condition     | String |             |
+| alertType     | String |             |
+| validity      | String |             |
+| data          | String |             |
+| remarks       | String |             |
+| smsFlag       | String |             |
+| mailFlag      | String |             |
+| pushFlag      | String |             |
 
 __Response Structure__
 
@@ -63,12 +63,13 @@ __Response Structure__
         }
     ]
 }
-```
+```  
 __Parameters__
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|alertType	|String	||
+| Field     | Type   | Description |
+| --------- | ------ | ----------- |
+| alertType | String |             |
+
 
 ### GetPendingAlerts
 
@@ -81,9 +82,9 @@ __Request Structure__
 ```
 __Input parameters__
 
-|Field	|           Type	|                    Description|
-|-------|-------------------|-------------------------------|
-|userId|          String          |                        |                                   
+| Field  | Type   | Description |
+| ------ | ------ | ----------- |
+| userId | String |             |
 
 __Response Structure__
 
@@ -110,22 +111,22 @@ __Response Structure__
 ```
 __Parameters__
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|alertType	|String	||
-|alertId	|String	||
-|tradingSymbol	|String	||
-|exchange	|String	||
-|token	|String	||
-|remarks	|String	||
-|validity	|String	||
-|data	|String	||
-|alertCriteria	|String	||
-|condition	|String	||
-|alertVersus	|String	||
+| Field         | Type   | Description |
+| ------------- | ------ | ----------- |
+| alertType     | String |             |
+| alertId       | String |             |
+| tradingSymbol | String |             |
+| exchange      | String |             |
+| token         | String |             |
+| remarks       | String |             |
+| validity      | String |             |
+| data          | String |             |
+| alertCriteria | String |             |
+| condition     | String |             |
+| alertVersus   | String |             |
 
 
-
+   
 ### ModifyAlerts
 
 __Request Structure__
@@ -152,25 +153,25 @@ __Request Structure__
 ```
 __Input parameters__
 
-|Field	|           Type	|                    Description|
-|-------|-------------------|-------------------------------|
-|userId|          String          |                        |                                   
-|actId|           String         |                        |                                   
-|exchange|        String            |                        |                                  
-|tradingSymbol|    String                |                        |                                   
-|qty|           String         |                        |                                 
-|price|           String         |                        |                                 
-|product|          String          |                        |                        
-|tranType|          String          |                        |                           
-|prcType|            String        |                        |                  
-|ret|               String     |                        |         
-|amo|   String |                                |
-|triggerPrice|String|                            |
-|disclosedQty|String|                            |
-|mktProtection|String|                          |
-|bookProfitPrice|String|                        |      
-|bookLossPrice|String|                         |
-|trailingPrice|String|                         |
+| Field           | Type   | Description |
+| --------------- | ------ | ----------- |
+| userId          | String |             |
+| actId           | String |             |
+| exchange        | String |             |
+| tradingSymbol   | String |             |
+| qty             | String |             |
+| price           | String |             |
+| product         | String |             |
+| tranType        | String |             |
+| prcType         | String |             |
+| ret             | String |             |
+| amo             | String |             |
+| triggerPrice    | String |             |
+| disclosedQty    | String |             |
+| mktProtection   | String |             |
+| bookProfitPrice | String |             |
+| bookLossPrice   | String |             |
+| trailingPrice   | String |             |
 
 __Response Structure__
 
@@ -187,9 +188,9 @@ __Response Structure__
 ```
 __Parameters__
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|alertId	|String	||
+| Field   | Type   | Description |
+| ------- | ------ | ----------- |
+| alertId | String |             |
 
 
 ### GetBrokerMsg
@@ -203,9 +204,9 @@ __Request Structure__
 ```
 __Input parameters__
 
-|Field	|           Type	|                    Description|
-|-------|-------------------|-------------------------------|
-|userId|          String          |                        |      
+| Field  | Type   | Description |
+| ------ | ------ | ----------- |
+| userId | String |             |
                           
 
 __Response Structure__
@@ -227,13 +228,13 @@ __Response Structure__
 ```
 __Parameters__
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|alertType	|Date	||
-|msgType	|String	||
-|message	|String	||
-|note	|String	||
-|msgSubType	|String	||
+| Field      | Type   | Description |
+| ---------- | ------ | ----------- |
+| alertType  | Date   |             |
+| msgType    | String |             |
+| message    | String |             |
+| note       | String |             |
+| msgSubType | String |             |
 
 
 
@@ -243,16 +244,16 @@ __Request Structure__
 
 ```
 {
-    "userId": "J111",
+    "userId": "<USER_ID>",
     "alertId": "23013000000008"
 }
 ```
 __Input parameters__
 
-|Field	|           Type	|                    Description|
-|-------|-------------------|-------------------------------|
-|userId|          String          |                        |                                   
-|alertId|           String         |                        |                                   
+| Field   | Type   | Description |
+| ------- | ------ | ----------- |
+| userId  | String |             |
+| alertId | String |             |
 
 
 __Response Structure__
@@ -270,9 +271,9 @@ __Response Structure__
 ```
 __Parameters__
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|alertId	|String	||
+| Field   | Type   | Description |
+| ------- | ------ | ----------- |
+| alertId | String |             |
 
 ### ExchStatus 
 
@@ -285,9 +286,9 @@ __Request Structure__
 ```
 __Input parameters__
 
-|Field	|           Type	|                    Description|
-|-------|-------------------|-------------------------------|
-|userId|          String          |                        |     
+| Field  | Type   | Description |
+| ------ | ------ | ----------- |
+| userId | String |             |
 
                           
 
@@ -308,11 +309,11 @@ __Response Structure__
 ```
 __Parameters__
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|exchange	|String	||
-|status	|String	||
-|type	|String	||
+| Field    | Type   | Description |
+| -------- | ------ | ----------- |
+| exchange | String |             |
+| status   | String |             |
+| type     | String |             |
 
 
 ### EXchMsg
@@ -327,10 +328,10 @@ __Request Structure__
 ```
 __Input parameters__
 
-|Field	|           Type	|                    Description|
-|-------|-------------------|-------------------------------|
-|userId|          String          |                        |     
-|exchange|          String          |                        |     
+| Field    | Type   | Description |
+| -------- | ------ | ----------- |
+| userId   | String |             |
+| exchange | String |             |
 
 
                           
@@ -352,11 +353,11 @@ __Response Structure__
 ```
 __Parameters__
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|message 	|String	||
-|time  	|Date	||
-|exchange  	|String	||
+| Field    | Type   | Description |
+| -------- | ------ | ----------- |
+| message  | String |             |
+| time     | Date   |             |
+| exchange | String |             |
 
 ### Get Criterial
 
@@ -370,9 +371,9 @@ __Request Structure__
 ```
 __Input parameters__
 
-|Field	|           Type	|                    Description|
-|-------|-------------------|-------------------------------|
-|userId|          String          |                        |     
+| Field  | Type   | Description |
+| ------ | ------ | ----------- |
+| userId | String |             |
 
 
                           
@@ -396,11 +397,11 @@ __Response Structure__
 ```
 __Parameters__
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|createdOn 	|String	||
-|alertCriteria 	|Date	||
-|condition 	|String	||
-|alertVersus 	|String	||
-|alertType 	|String	||
+| Field         | Type   | Description |
+| ------------- | ------ | ----------- |
+| createdOn     | String |             |
+| alertCriteria | Date   |             |
+| condition     | String |             |
+| alertVersus   | String |             |
+| alertType     | String |             |
 

@@ -1,18 +1,20 @@
 ---
+
 title: Basket Order
+
 ---
 
 # Basket Order
 
-|Type	| API|Details	 |
-|-------|------|-------------|
-|POST	|basketorder/create  | Create basket order|
-|POST	|basketorder/get	 | Get basket order|
-|POST	|basketorder/rename|	Rename basket order|
-|POST	|basketorder/delete|	delete basket order|
-|POST	|basketorder/add/scrips| add basket order scrips|
-|POST	|basketorder/get/scrips |	Retrieve basket order scrips|
-|POST	|basketorder/delete/scrips  |	 Delete basket order scrips|
+| Type | API                       | Details                      |
+| ---- | ------------------------- | ---------------------------- |
+| POST | basketorder/create        | Create basket order          |
+| POST | basketorder/get           | Get basket order             |
+| POST | basketorder/rename        | Rename basket order          |
+| POST | basketorder/delete        | delete basket order          |
+| POST | basketorder/add/scrips    | add basket order scrips      |
+| POST | basketorder/get/scrips    | Retrieve basket order scrips |
+| POST | basketorder/delete/scrips | Delete basket order scrips   |
 
 
 ### Create Basket
@@ -25,17 +27,16 @@ __Request Structure__
     "basketName": "bank",
     "createdBy" : "J111"
 }
-
 ```
 
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|userId	|String	|The unique, permanent user ID registered with the broker             |
-|basketName|String	|Unique Basket Name            |
-|createdBy|String	|            |
+| Field      | Type   | Description                                              |
+| ---------- | ------ | -------------------------------------------------------- |
+| userId     | String | The unique, permanent user ID registered with the broker |
+| basketName | String | Unique Basket Name                                       |
+| createdBy  | String |                                                          |
 
 
 __Response Structure__
@@ -57,13 +58,13 @@ __Response Structure__
 ```
 __Parameters__
 
-|Field|	Type|	Description|
-|-------|-------------------|-------------------------------|
-|basketId|	Int|	Unique Basket ID|
-|basketName|	String|Unique Basket Name  |
-|isExecuted|	String|  |
-|createdOn|	String| Created On at which the SIP was registered by the API |
-|scripCount|	Int|  |
+| Field      | Type   | Description                                           |
+| ---------- | ------ | ----------------------------------------------------- |
+| basketId   | Int    | Unique Basket ID                                      |
+| basketName | String | Unique Basket Name                                    |
+| isExecuted | String |                                                       |
+| createdOn  | String | Created On at which the SIP was registered by the API |
+| scripCount | Int    |                                                       |
 
 
 ### Get Basket Order
@@ -73,18 +74,16 @@ __Request Structure__
 
 ```
 {
-    "userId": "<USER_ID"
-   
+    "userId": "<USER_ID" 
 }
-
 ```
 
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|userId	|String	|The unique, permanent user ID registered with the broker           |
+| Field  | Type   | Description                                              |
+| ------ | ------ | -------------------------------------------------------- |
+| userId | String | The unique, permanent user ID registered with the broker |
 
 
 __Response Structure__
@@ -106,13 +105,13 @@ __Response Structure__
 ```
 __Parameters__
 
-|Field|	Type|	Description|
-|-------|-------------------|-------------------------------|
-|basketId|	String|	Unique Basket ID|
-|basketName|	String|Unique Basket Name  |
-|isExecuted|	String|  |
-|createdOn|	String|Created On at which the SIP was registered by the API  |
-|scripCount|	Int|  |
+| Field      | Type   | Description                                           |
+| ---------- | ------ | ----------------------------------------------------- |
+| basketId   | String | Unique Basket ID                                      |
+| basketName | String | Unique Basket Name                                    |
+| isExecuted | String |                                                       |
+| createdOn  | String | Created On at which the SIP was registered by the API |
+| scripCount | Int    |                                                       |
 
 
 ### Rename Basket
@@ -132,12 +131,12 @@ __Request Structure__
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|userId	|String	|The unique, permanent user ID registered with the broker           |
-|basketId	|String	|Unique Basket ID           |
-|basketName	|String	| Unique Basket Name          |
-|updatedBy	|String	|           |
+| Field      | Type   | Description                                              |
+| ---------- | ------ | -------------------------------------------------------- |
+| userId     | String | The unique, permanent user ID registered with the broker |
+| basketId   | String | Unique Basket ID                                         |
+| basketName | String | Unique Basket Name                                       |
+| updatedBy  | String |                                                          |
 
 
 
@@ -161,13 +160,13 @@ __Response Structure__
 ```
 __Parameters__
 
-|Field|	Type|	Description|
-|-------|-------------------|-------------------------------|
-|basketId|	String|	Unique Basket ID|
-|basketName|	String|	Unique Basket Name |
-|isExecuted|	String| |
-|createdOn|	String|	Created On at which the SIP was registered by the API |
-|scripCount|	String|	 |
+| Field      | Type   | Description                                           |
+| ---------- | ------ | ----------------------------------------------------- |
+| basketId   | String | Unique Basket ID                                      |
+| basketName | String | Unique Basket Name                                    |
+| isExecuted | String |                                                       |
+| createdOn  | String | Created On at which the SIP was registered by the API |
+| scripCount | String |                                                       |
 
 
 ### Delete Basket
@@ -187,10 +186,10 @@ __Request Structure__
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|userId	|String	|The unique, permanent user ID registered with the broker           |
-|basketId	|Int	| Unique Basket ID          |
+| Field    | Type   | Description                                              |
+| -------- | ------ | -------------------------------------------------------- |
+| userId   | String | The unique, permanent user ID registered with the broker |
+| basketId | Int    | Unique Basket ID                                         |
 
 
 
@@ -205,11 +204,11 @@ __Response Structure__
 ```
 <!-- __Parameters__
 
-|Field|	Type|	Description|
-|-------|-------------------|-------------------------------|
-|status|	String|	|
-|message|	String|	Last updated status of the order |
-|result|	String|	Last updated status of the order | -->
+| Field   | Type   | Description                      |
+| ------- | ------ | -------------------------------- |
+| status  | String |                                  |
+| message | String | Last updated status of the order |
+| result  | String | Last updated status of the order | --> |
 
 <!-- 
 ### Retrieve Basket Report
@@ -228,9 +227,9 @@ __Request Structure__
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|userId	|String	|           |
+| Field  | Type   | Description |
+| ------ | ------ | ----------- |
+| userId | String |             |
 
 
 __Response Structure__
@@ -252,13 +251,13 @@ __Response Structure__
 ```
 __Parameters__
 
-|Field|	Type|	Description|
-|-------|-------------------|-------------------------------|
-|basketId|	String|	Order specific identification generated by nidhi|
-|basketName|	String|	Last updated status of the order |
-|isExecuted|	String|	Last updated status of the order |
-|createdOn|	String|	Last updated status of the order |
-|scripCount|	String|	Last updated status of the order | -->
+| Field      | Type   | Description                                      |
+| ---------- | ------ | ------------------------------------------------ |
+| basketId   | String | Order specific identification generated by nidhi |
+| basketName | String | Last updated status of the order                 |
+| isExecuted | String | Last updated status of the order                 |
+| createdOn  | String | Last updated status of the order                 |
+| scripCount | String | Last updated status of the order                 | --> |
 
 
 ### Add Script To Basket
@@ -294,26 +293,26 @@ __Request Structure__
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|userId	|String	|The unique, permanent user ID registered with the broker           |
-|basketId	|Int	|  Unique Basket ID         |
-|exchange	|String	|Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)           |
-|token	|String	| Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details          |
-|tradingSymbol	|String	|Exchange tradingsymbol of the of the instrument           |
-|qty	|String	| Quantity to transact          |
-|price	|String	|Price at which main leg of bracket order will be placed           |
-|product	|String	| Product code (MIS or CNC or NRML)          |
-|tranType	|String	| Buy and Sell          |
-|priceType	|String	| PriceType (Limit , Market , SL , SL-M)          |
-|orderType	|String	| Order type ( Regular , BO , CO , AMO)          |
-|triggerPrice	|String	|The price at which an order should be triggered (SL, SL-M)           |
-|disclosedQty	|String	| Quantity to be disclosed (may be different from actual quantity) to the public exchange orderbook. Only for equitie          |
-|MktProtection	|String	| A market-with-protection order cancels an order to buy or sell stock or other assets and re-submits it as a limit order. A broker might submit a market-with-protection order if the price of the stock has moved unexpectedly and dramatically since the market order was placed.          |
-|target	|String	|A target price is an estimate of the future price of a stock. Target prices are based on earnings forecasts and assumed valuation multiples. Target prices can be used to evaluate stocks and may be even more useful than an equity analyst's rating.           |
-|stopLoss	|String	| A stop-loss order is an order placed with a broker to buy or sell a specific stock once the stock reaches a certain price. A stop-loss is designed to limit an investor's loss on a security position. For example, setting a stop-loss order for 10% below the price at which you bought the stock will limit your loss to 10%.          |
-|trailingStopLoss	|String	| A trailing stop loss order adjusts the stop price at a fixed percent or number of points below or above the market price of a stock          |
-|createdBy	|String	|           |
+| Field      | Type   | Description                                      |
+| ---------- | ------ | ------------------------------------------------ |
+| userId           | String | The unique, permanent user ID registered with the broker                                                                                                                                                                                                                                                                         |
+| basketId         | Int    | Unique Basket ID                                                                                                                                                                                                                                                                                                                 |
+| exchange         | String | Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)                                                                                                                                                                                                                                                                              |
+| token            | String | Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip detai                                                                        |
+| tradingSymbol    | String | Exchange tradingsymbol of the of the instrument                                                                                                                                                                                                                                                                                  |
+| qty              | String | Quantity to transact                                                                                                                                                                                                                                                                                                             |
+| price            | String | Price at which main leg of bracket order will be placed                                                                                                                                                                                                                                                                          |
+| product          | String | Product code (MIS or CNC or NRML)                                                                                                                                                                                                                                                                                                |
+| tranType         | String | Buy and Sell                                                                                                                                                                                                                                        |
+| priceType        | String | PriceType (Limit , Market , SL , SL-M)                                                                                                                                                                                                                                                                                           |
+| orderType        | String | Order type ( Regular , BO , CO , AMO)                                                                                                                                                                                                                                                                                            |
+| triggerPrice     | String | The price at which an order should be triggered (SL, SL-M)                                                                                                                                                                                                                                                                       |
+| disclosedQty     | String | Quantity to be disclosed (may be different from actual quantity) to the public exchange orderbook. Only for equitie                                                                                                                                                                                                              |
+| MktProtection    | String | A market-with-protection order cancels an order to buy or sell stock or other assets and re-submits it as a limit order. A broker might submit a market-with-protection order if the price of the stock has moved unexpectedly and dramatically since the market order was placed.                                               |
+| target           | String | A target price is an estimate of the future price of a stock. Target prices are based on earnings forecasts and assumed valuation multiples. Target prices can be used to evaluate stocks and may be even more useful than an equity analyst's rating.                                                                           |
+| stopLoss         | String | A stop-loss order is an order placed with a broker to buy or sell a specific stock once the stock reaches a certain price. A stop-loss is designed to limit an investor's loss on a security position. For example, setting a stop-loss order for 10% below the price at which you bought the stock will limit your loss to 10%. |
+| trailingStopLoss | String | A trailing stop loss order adjusts the stop price at a fixed percent or number of points below or above the market price of a stock                                                                                                                                                                                              |
+| createdBy        | String |                                                                                                                                                                                                                                                                                                                                  |
 
 
 
@@ -351,27 +350,27 @@ __Response Structure__
 ```
 __Parameters__
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|userId	|String	|The unique, permanent user ID registered with the broker           |
-|basketId	|Int	|  Unique Basket ID         |
-|exchange	|String	|Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)           |
-|token	|String	| Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details          |
-|tradingSymbol	|String	|Exchange tradingsymbol of the of the instrument           |
-|qty	|String	| Quantity to transact          |
-|price	|String	|Price at which main leg of bracket order will be placed           |
-|product	|String	| Product code (MIS or CNC or NRML)          |
-|tranType	|String	| Buy and Sell          |
-|priceType	|String	| PriceType (Limit , Market , SL , SL-M)          |
-|orderType	|String	| Order type ( Regular , BO , CO , AMO)  |
-|ret	|String	|           |
-|triggerPrice	|String	|The price at which an order should be triggered (SL, SL-M)           |
-|disclosedQty	|String	| Quantity to be disclosed (may be different from actual quantity) to the public exchange orderbook. Only for equitie          |
-|MktProtection	|String	| A market-with-protection order cancels an order to buy or sell stock or other assets and re-submits it as a limit order. A broker might submit a market-with-protection order if the price of the stock has moved unexpectedly and dramatically since the market order was placed.          |
-|target	|String	|A target price is an estimate of the future price of a stock. Target prices are based on earnings forecasts and assumed valuation multiples. Target prices can be used to evaluate stocks and may be even more useful than an equity analyst's rating.           |
-|stopLoss	|String	| A stop-loss order is an order placed with a broker to buy or sell a specific stock once the stock reaches a certain price. A stop-loss is designed to limit an investor's loss on a security position. For example, setting a stop-loss order for 10% below the price at which you bought the stock will limit your loss to 10%.          |
-|trailingStopLoss	|String	| A trailing stop loss order adjusts the stop price at a fixed percent or number of points below or above the market price of a stock          |
-|createdBy	|String	|           |
+| Field            | Type   | Description                                                                                                                                                                                                                                                                                                                      |
+| ---------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| userId           | String | The unique, permanent user ID registered with the broker                                                                                                                                                                                                                                                                         |
+| basketId         | Int    | Unique Basket ID                                                                                                                                                                                                                                                                                                                 |
+| exchange         | String | Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)                                                                                                                                                                                                                                                                              |
+| token            | String | Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details                                                                                                                                                          |
+| tradingSymbol    | String | Exchange tradingsymbol of the of the instrument                                                                                                                                                                                                                                                                                  |
+| qty              | String | Quantity to transact                                                                                                                                                                                                                                                                                                             |
+| price            | String | Price at which main leg of bracket order will be placed                                                                                                                                                                                                                                                                          |
+| product          | String | Product code (MIS or CNC or NRML)                                                                                                                                                                                                                                                                                                |
+| tranType         | String | Buy and Sell                                                                                                                                                                                                                                                                                                                     |
+| priceType        | String | PriceType (Limit , Market , SL , SL-M)                                                                                                                                                                                                                                                                                           |
+| orderType        | String | Order type ( Regular , BO , CO , AMO)                                                                                                                                                                                                                                                                                            |
+| ret              | String |                                                                                                                                                                                                                                                                                                                                  |
+| triggerPrice     | String | The price at which an order should be triggered (SL, SL-M)                                                                                                                                                                                                                                                                       |
+| disclosedQty     | String | Quantity to be disclosed (may be different from actual quantity) to the public exchange orderbook. Only for equitie                                                                                                                                                                                                              |
+| MktProtection    | String | A market-with-protection order cancels an order to buy or sell stock or other assets and re-submits it as a limit order. A broker might submit a market-with-protection order if the price of the stock has moved unexpectedly and dramatically since the market order was placed.                                               |
+| target           | String | A target price is an estimate of the future price of a stock. Target prices are based on earnings forecasts and assumed valuation multiples. Target prices can be used to evaluate stocks and may be even more useful than an equity analyst's rating.                                                                           |
+| stopLoss         | String | A stop-loss order is an order placed with a broker to buy or sell a specific stock once the stock reaches a certain price. A stop-loss is designed to limit an investor's loss on a security position. For example, setting a stop-loss order for 10% below the price at which you bought the stock will limit your loss to 10%. |
+| trailingStopLoss | String | A trailing stop loss order adjusts the stop price at a fixed percent or number of points below or above the market price of a stock                                                                                                                                                                                              |
+| createdBy        | String |                                                                                                                                                                                                                                                                                                                                  |
 
 ### Get Retrive Scrips
 
@@ -389,10 +388,10 @@ __Request Structure__
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|basketId	|Int	|  Unique Basket ID         |
-|userID	|String	|The unique, permanent user ID registered with the broker           |
+| Field    | Type   | Description                                              |
+| -------- | ------ | -------------------------------------------------------- |
+| basketId | Int    | Unique Basket ID                                         |
+| userID   | String | The unique, permanent user ID registered with the broker |
 
 
 __Response Structure__
@@ -429,27 +428,27 @@ __Response Structure__
 ```
 __Parameters__
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|userId	|String	|The unique, permanent user ID registered with the broker           |
-|basketId	|Int	|  Unique Basket ID         |
-|exchange	|String	|Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)           |
-|token	|String	| Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details          |
-|tradingSymbol	|String	|Exchange tradingsymbol of the of the instrument           |
-|qty	|String	| Quantity to transact          |
-|price	|String	|Price at which main leg of bracket order will be placed           |
-|product	|String	| Product code (MIS or CNC or NRML)          |
-|tranType	|String	| Buy and Sell          |
-|priceType	|String	| PriceType (Limit , Market , SL , SL-M)          |
-|orderType	|String	| Order type ( Regular , BO , CO , AMO)  |
-|ret	|String	|           |
-|triggerPrice	|String	|The price at which an order should be triggered (SL, SL-M)           |
-|disclosedQty	|String	| Quantity to be disclosed (may be different from actual quantity) to the public exchange orderbook. Only for equitie          |
-|MktProtection	|String	| A market-with-protection order cancels an order to buy or sell stock or other assets and re-submits it as a limit order. A broker might submit a market-with-protection order if the price of the stock has moved unexpectedly and dramatically since the market order was placed.          |
-|target	|String	|A target price is an estimate of the future price of a stock. Target prices are based on earnings forecasts and assumed valuation multiples. Target prices can be used to evaluate stocks and may be even more useful than an equity analyst's rating.           |
-|stopLoss	|String	| A stop-loss order is an order placed with a broker to buy or sell a specific stock once the stock reaches a certain price. A stop-loss is designed to limit an investor's loss on a security position. For example, setting a stop-loss order for 10% below the price at which you bought the stock will limit your loss to 10%.          |
-|trailingStopLoss	|String	| A trailing stop loss order adjusts the stop price at a fixed percent or number of points below or above the market price of a stock          |
-|createdBy	|String	|           |
+| Field            | Type   | Description                                                                                                                                                                                                                                                                                                                      |
+| ---------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| userId           | String | The unique, permanent user ID registered with the broker                                                                                                                                                                                                                                                                         |
+| basketId         | Int    | Unique Basket ID                                                                                                                                                                                                                                                                                                                 |
+| exchange         | String | Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)                                                                                                                                                                                                                                                                              |
+| token            | String | Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details                                                                                                                                                          |
+| tradingSymbol    | String | Exchange tradingsymbol of the of the instrument                                                                                                                                                                                                                                                                                  |
+| qty              | String | Quantity to transact                                                                                                                                                                                                                                                                                                             |
+| price            | String | Price at which main leg of bracket order will be placed                                                                                                                                                                                                                                                                          |
+| product          | String | Product code (MIS or CNC or NRML)                                                                                                                                                                                                                                                                                                |
+| tranType         | String | Buy and Sell                                                                                                                                                                                                                                                                                                                     |
+| priceType        | String | PriceType (Limit , Market , SL , SL-M)                                                                                                                                                                                                                                                                                           |
+| orderType        | String | Order type ( Regular , BO , CO , AMO)                                                                                                                                                                                                                                                                                            |
+| ret              | String |                                                                                                                                                                                                                                                                                                                                  |
+| triggerPrice     | String | The price at which an order should be triggered (SL, SL-M)                                                                                                                                                                                                                                                                       |
+| disclosedQty     | String | Quantity to be disclosed (may be different from actual quantity) to the public exchange orderbook. Only for equitie                                                                                                                                                                                                              |
+| MktProtection    | String | A market-with-protection order cancels an order to buy or sell stock or other assets and re-submits it as a limit order. A broker might submit a market-with-protection order if the price of the stock has moved unexpectedly and dramatically since the market order was placed.                                               |
+| target           | String | A target price is an estimate of the future price of a stock. Target prices are based on earnings forecasts and assumed valuation multiples. Target prices can be used to evaluate stocks and may be even more useful than an equity analyst's rating.                                                                           |
+| stopLoss         | String | A stop-loss order is an order placed with a broker to buy or sell a specific stock once the stock reaches a certain price. A stop-loss is designed to limit an investor's loss on a security position. For example, setting a stop-loss order for 10% below the price at which you bought the stock will limit your loss to 10%. |
+| trailingStopLoss | String | A trailing stop loss order adjusts the stop price at a fixed percent or number of points below or above the market price of a stock                                                                                                                                                                                              |
+| createdBy        | String |                                                                                                                                                                                                                                                                                                                                  |
 
 ### Delete Scrip in Basket
 
@@ -471,11 +470,11 @@ __Request Structure__
 __Input parameters__
 
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
-|userID	|String	|The unique, permanent user ID registered with the broker           |
-|basketId	|Int	|  Unique Basket ID         |
-|scripsId	|List	|           |
+| Field    | Type   | Description                                              |
+| -------- | ------ | -------------------------------------------------------- |
+| userID   | String | The unique, permanent user ID registered with the broker |
+| basketId | Int    | Unique Basket ID                                         |
+| scripsId | List   |                                                          |
 
 
 
@@ -509,30 +508,31 @@ __Response Structure__
             "trailingStopLoss": ""
         }
     ]
+}
 ```
 __Parameters__
 
-|Field	| Type	|Description|
-|-------|-------------------|-------------------------------|
- |Id	|String	|The unique, permanent user ID registered with the broker           |
-|basketId	|Int	|  Unique Basket ID         |
-|exchange	|String	|Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)           |
-|token	|String	| Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details          |
-|tradingSymbol	|String	|Exchange tradingsymbol of the of the instrument           |
-|qty	|String	| Quantity to transact          |
-|price	|String	|Price at which main leg of bracket order will be placed           |
-|product	|String	| Product code (MIS or CNC or NRML)          |
-|tranType	|String	| Buy and Sell          |
-|priceType	|String	| PriceType (Limit , Market , SL , SL-M)          |
-|orderType	|String	| Order type ( Regular , BO , CO , AMO)  |
-|ret	|String	|           |
-|triggerPrice	|String	|The price at which an order should be triggered (SL, SL-M)           |
-|disclosedQty	|String	| Quantity to be disclosed (may be different from actual quantity) to the public exchange orderbook. Only for equitie          |
-|MktProtection	|String	| A market-with-protection order cancels an order to buy or sell stock or other assets and re-submits it as a limit order. A broker might submit a market-with-protection order if the price of the stock has moved unexpectedly and dramatically since the market order was placed.          |
-|target	|String	|A target price is an estimate of the future price of a stock. Target prices are based on earnings forecasts and assumed valuation multiples. Target prices can be used to evaluate stocks and may be even more useful than an equity analyst's rating.           |
-|stopLoss	|String	| A stop-loss order is an order placed with a broker to buy or sell a specific stock once the stock reaches a certain price. A stop-loss is designed to limit an investor's loss on a security position. For example, setting a stop-loss order for 10% below the price at which you bought the stock will limit your loss to 10%.          |
-|trailingStopLoss	|String	| A trailing stop loss order adjusts the stop price at a fixed percent or number of points below or above the market price of a stock          |
-|createdBy	|String	|           |
+| Field            | Type   | Description                                                                                                                                                                                                                                                                                                                      |
+| ---------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Id               | String | The unique, permanent user ID registered with the broker                                                                                                                                                                                                                                                                         |
+| basketId         | Int    | Unique Basket ID                                                                                                                                                                                                                                                                                                                 |
+| exchange         | String | Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)                                                                                                                                                                                                                                                                              |
+| token            | String | Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details                                                                                                                                                          |
+| tradingSymbol    | String | Exchange tradingsymbol of the of the instrument                                                                                                                                                                                                                                                                                  |
+| qty              | String | Quantity to transact                                                                                                                                                                                                                                                                                                             |
+| price            | String | Price at which main leg of bracket order will be placed                                                                                                                                                                                                                                                                          |
+| product          | String | Product code (MIS or CNC or NRML)                                                                                                                                                                                                                                                                                                |
+| tranType         | String | Buy and Sell                                                                                                                                                                                                                                                                                                                     |
+| priceType        | String | PriceType (Limit , Market , SL , SL-M)                                                                                                                                                                                                                                                                                           |
+| orderType        | String | Order type ( Regular , BO , CO , AMO)                                                                                                                                                                                                                                                                                            |
+| ret              | String |                                                                                                                                                                                                                                                                                                                                  |
+| triggerPrice     | String | The price at which an order should be triggered (SL, SL-M)                                                                                                                                                                                                                                                                       |
+| disclosedQty     | String | Quantity to be disclosed (may be different from actual quantity) to the public exchange orderbook. Only for equitie                                                                                                                                                                                                              |
+| MktProtection    | String | A market-with-protection order cancels an order to buy or sell stock or other assets and re-submits it as a limit order. A broker might submit a market-with-protection order if the price of the stock has moved unexpectedly and dramatically since the market order was placed.                                               |
+| target           | String | A target price is an estimate of the future price of a stock. Target prices are based on earnings forecasts and assumed valuation multiples. Target prices can be used to evaluate stocks and may be even more useful than an equity analyst's rating.                                                                           |
+| stopLoss         | String | A stop-loss order is an order placed with a broker to buy or sell a specific stock once the stock reaches a certain price. A stop-loss is designed to limit an investor's loss on a security position. For example, setting a stop-loss order for 10% below the price at which you bought the stock will limit your loss to 10%. |
+| trailingStopLoss | String | A trailing stop loss order adjusts the stop price at a fixed percent or number of points below or above the market price of a stock                                                                                                                                                                                              |
+| createdBy        | String |                                                                                                                                                                                                                                                                                                                                  |
 
 
 

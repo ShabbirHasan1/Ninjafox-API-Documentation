@@ -4,24 +4,25 @@ title: Authentication
 
 ---
 
+# Authentication
 The authentication mechanism is handled by customising one of the most reliable open source IAM (Identity & Access Management) in the planet. The authentication layer takes care of integration with RMS/OMS, Mutual Funds and other backend systems.
 
 ## Login
-### Check Device Info
-### Login
 
 |Method	     |APIS  	|Detail        |
-|------------|----------|------------------ |
-| Post|auth/login  |login|
+|------------|----------|------ ------ |
+| Post|access/client/verify  |  |
+| Post|access/pwd/validate|    |
 
 
-__Request Structure__ 
+### Client Verify
+
+__Request Structure__   
 
 ```
+
 {
-   "userId":"<USER_ID>",
-   "password":"Password",
-   "source":"MOB"
+    "userId": "7904683175"
 }
 
 ```
@@ -32,8 +33,7 @@ __Input parameters__
 |Field	| Type	|Description|
 |-------|-------------------|-------------------------------|
 |userId	|String	|The unique, permanent user ID registered with the broker   |
-|password	|String	|The unique,  user Created a Password   |
-|source	|String	| Request source from which platform eg., 'MOBILEAPI' or 'RESTAPI'  |
+
 
 
 
@@ -41,15 +41,69 @@ __Response Structure__
 
 ```
 {
-   "status":"Ok",
-   "message":"Success",
-   "result":[
-         {
-             "accessToken":"XXXX",
-              "tokenType":"Bearer",
-              "refreshToken":"XXXX""       
-      }
-   ]
+    "status": "Ok",
+    "message": "Success",
+    "result": [
+        {
+            "isExist": "Yes",
+            "ucc": "SKY100"
+        }
+    ]
+}
+```
+
+__parameters__
+
+
+<!-- |Field	| Type	|Description|
+|-------|-------------------|-------------------------------|
+|accessToken	|String	|The authentication token that's used with every subsequent request Unless this is invalidated using the API, or invalidated by a master-logout from the Kite Web trading terminal, it'll expire at 6 AM on the next day (regulatory requirement)     |
+|tokenType	|String	|Token type i.e, 'Bearer' |
+|refreshToken	|String	|A token for getting long standing read permissions. This is only available to certain approved platforms | -->
+
+|Field	| Type	|Description|
+|-------|-------|--------------------|
+|isExist	|String	|  |
+|ucc	|String	|  |
+
+ 
+### PassValidation
+
+__Request Structure__ 
+
+```
+{
+    "userId": "SKY100",
+    "source":"WEB",
+    "password":"abc@123"
+}
+
+```
+
+__Input parameters__
+
+
+|Field	| Type	|Description|
+|-------|-------------------|-------------------------------|
+|userId	|String	|  |
+|source	|String	| Request source from which platform eg., 'MOBILEAPI' or 'RESTAPI'  |
+|password	|String	|  |
+
+
+
+__Response Structure__
+
+```
+{
+    "status": "Ok",
+    "message": "Success",
+    "result": [
+        {
+            "totpAvailable": true,
+            "token": "JQYARHUURJKI8LGTJCC8DB3AWWEDW30G6WHL8PFIJ34CZGJKT9AH2MIRXCMRZFHWR5MRK8KIV0K7LZUNIW0WGE7SXPUTSVQ6ZGMHMBGTHWGP8OZGHQL1CFBW27WU4MVOTZBLBUJ64X6X2UZ77CBI1ZXTE61UNA353Y382HT74AV4S6D31Q90CM25XX8UY1FGDX3ONVFM4GFP5BO0UB3I20353V2GPOTY84T0C9QUY4QFUP6CQT8SP7128WFM6BKT",
+            "kcRole": "ACTIVE_USER"
+        }
+    ]
 }
 ```
 
@@ -58,15 +112,18 @@ __parameters__
 
 |Field	| Type	|Description|
 |-------|-------------------|-------------------------------|
-|accessToken	|String	|The authentication token that's used with every subsequent request Unless this is invalidated using the API, or invalidated by a master-logout from the Kite Web trading terminal, it'll expire at 6 AM on the next day (regulatory requirement)     |
-|tokenType	|String	|Token type i.e, 'Bearer' |
-|refreshToken	|String	|A token for getting long standing read permissions. This is only available to certain approved platforms |
+|totpAvailable	|String	|     |
+|token	|String	| |
+|kcRole	|String	| |
 
- 
-### Logout
-### 2FA Login
 
 ## Credentials
+
+|Method	     |APIS  	|Detail        |
+|------------|----------|------ ------ |
+| Post|access/pwd/forget | |
+| Post|access/pwd/reset | |
+
 
 ### Forget Password
 
@@ -74,7 +131,7 @@ __Request Structure__
 
 ```
 {
-    "mobileNo": "1234567890",
+    "mobileNo": "<USER_ID>",
     "source":"WEB",
     "pan":"<pan_no>"
 }
@@ -111,7 +168,7 @@ __Response Structure__
 |tokenType	|String	| |
 |refreshToken	|String	| | -->
 
-### Change Password
+<!-- ### Change Password -->
 
 <!-- __Request Structure__ 
 
@@ -160,7 +217,7 @@ __parameters__
 |tokenType	|String	| |
 |refreshToken	|String	| | -->
 
-### New Password
+<!-- ### New Password -->
 
 <!-- __Request Structure__ 
 
@@ -211,13 +268,12 @@ __parameters__
 
 ### Set Password
 
-<!-- __Request Structure__ 
+__Request Structure__ 
 
 ```
 {
    "userId":"<USER_ID>",
    "password":"Password",
-   "source":"MOB"
 }
 
 ```
@@ -229,7 +285,6 @@ __Input parameters__
 |-------|-------------------|-------------------------------|
 |userId	|String	|   |
 |password	|String	|   |
-|source	|String	|   |
 
 
 
@@ -237,18 +292,12 @@ __Response Structure__
 
 ```
 {
-   "status":"Ok",
-   "message":"Success",
-   "result":[
-         {
-             "accessToken":"XXXX",
-              "tokenType":"Bearer",
-              "refreshToken":"XXXX""       
-      }
-   ]
+    "status": "Ok",
+    "message": "Password changed sucessfully",
+    "result": []
 }
 ```
-
+<!-- 
 __parameters__
 
 
@@ -274,7 +323,7 @@ __Request Structure__
 
 ```
 {
-    "userId": "1234567890",
+    "userId": "<USER_ID>",
     "source":"WEB"
 }
 
@@ -316,9 +365,9 @@ __Request Structure__
 
 ```
 {
-    "userId": "1234567890",
+    "userId": "<USER_Id>",
     "source":"WEB",
-    "otp":"353324"
+    "otp":"1234"
 }
 
 ```
@@ -361,16 +410,15 @@ __parameters__
 
 ## User Preference
 
-
-|Method	     |APIS  	|Detail        |
+|Method	     |APIS  	|Detail             |
 |------------|----------|------------------ |
-| Post|preferences/get  |Get preferences |
-| Post|preferences/update  |Set preferences |
+| GET |preferences/web  |Get preferences    |
+| Post|preferences/web/update  |Update preferences |
 
 
 ### Get User Preference
 
-__Request Structure__ 
+<!-- __Request Structure__ 
 
 ```
 {
@@ -386,7 +434,7 @@ __Input parameters__
 |Field	| Type	|Description|
 |-------|-------------------|-------------------------------|
 |source	|String	|Request source from which platform eg., 'MOBILEAPI' or 'RESTAPI'   |
-|keyVariable	|String	| Preference key Variable  |
+|keyVariable	|String	| Preference key Variable  | -->
 
 
 
@@ -398,10 +446,12 @@ __Response Structure__
     "message": "Success",
     "result": [
         {
-            "id": 75,
-            "keyVariable": "marketWatch",
-            "value": "MyList",
-            "source": "MOB"
+            "tag": "marketWatch",
+            "value": "My Watchlist"
+        },
+        {
+            "tag": "watchListSwitch",
+            "value": "Left"
         }
     ]
 }
@@ -412,27 +462,18 @@ __parameters__
 
 |Field	| Type	|Description|
 |-------|-------------------|-------------------------------|
-|id	|String	|Unique ID     |
-|keyVariable	|String	|Preference key Variable |
+|tag	|String	|Unique ID     |
 |value	|String	|Preference key Value |
-|source	|String	|Request source from which platform eg., 'MOBILEAPI' or 'RESTAPI' |
 
 
-### Set User Preference
+### Update User Preference
 
-__Request Structure__ 
+ __Request Structure__ 
 
 ```
 {
-    "userId": "<USER_ID>",
-    "source": "MOB",
-    "preferences": [
-        {
-            "id": 10,
-            "keyVariable": "marketWatch",
-            "value": "PreDefined"
-        }
-    ]
+    "tag": "orderWindowType",
+    "value": "horz"
 }
 
 ```
@@ -442,8 +483,7 @@ __Input parameters__
 
 |Field	| Type	|Description|
 |-------|-------------------|-------------------------------|
-|id	|String	|Unique ID   |
-|keyVariable	|String	|Preference key Variable   |
+|tag	|String	|  |
 |value	|String	| Preference key Value  |
 
 
@@ -454,11 +494,24 @@ __Response Structure__
 {
     "status": "Ok",
     "message": "Success",
-    "result": null
-}  
+    "result": [
+        {
+            "tag": "marketWatch",
+            "value": "My Watchlist"
+        },
+        {
+            "tag": "watchListSwitch",
+            "value": "Left"
+        }
+    ]
+}
 
-```
+``` 
+__parameters__
 
 
-## Update
-### Update User Info
+|Field	| Type	|Description|
+|-------|-------------------|-------------------------------|
+|tag	|String	|Unique ID     |
+|value	|String	|Preference key Value |
+

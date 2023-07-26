@@ -1,12 +1,13 @@
-site_name: Middleware API Document
+site_name:
+  Middleware API Document
 
- # Configuration
+  # Configuration
 theme:
   name: material
   logo: assets/images/ninjafox.svg
 
   features:
-    - content.code.copy 
+    - content.code.copy
     # - announce.dismiss
     - content.code.annotate
     # - content.tabs.link
@@ -48,7 +49,7 @@ theme:
     logo: logo
 extra_css:
   - stylesheets/extra.css
-  
+
   # Extensions
 markdown_extensions:
   - abbr
@@ -94,17 +95,17 @@ markdown_extensions:
 
 # Page tree
 nav:
-   - Introduction: index.md
-   - Authentication: Authentication.md
-   - Content 1: Content 1.md
-   - Content 2: Content 2.md
-   - User Setting: User Setting.md
-   - EKYC APIs: EKYC APIs.md
-   - Orders: orders.md
-   - Portfolio: portfolio.md
-   - Funds: Funds.md
-   - Alerts: Alerts.md
-   - Basket Order: Basket Order.md
+  - Introduction: index.md
+  - Authentication: Authentication.md
+  - Content 1: Content 1.md
+  - Content 2: Content 2.md
+  - User Setting: User Setting.md
+  - EKYC APIs: EKYC APIs.md
+  - Orders: orders.md
+  - Portfolio: portfolio.md
+  - Funds: Funds.md
+  - Alerts: Alerts.md
+  - Basket Order: Basket Order.md
   #  - Profile : Profile.md
   #  - Bank Details: Bank Details.md
   #  - Segment Selection: Segment Selection.md
@@ -112,7 +113,3 @@ nav:
   #  - Document Upload : Document Upload.md
   #  - In Person Verification: In Person Verification.md
   #  - ESign : Esign.md
-
-
- 
-
